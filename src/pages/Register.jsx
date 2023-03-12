@@ -1,5 +1,6 @@
 import React from "react";
 import Input from "../components/Input";
+import  logo from './somaiyalogo.jpg';
 
 const Register = () => {
   return (
@@ -9,13 +10,13 @@ const Register = () => {
         alignItems: "center",
         justifyContent: "center",
         height: "100%",
-        backgroundColor: "var(--primaryD)",
+        // backgroundColor: "var(--primaryD)",
       }}
     >
       <div
         style={{
           display: "flex",
-          backgroundColor: "var(--white)",
+          backgroundColor: "#D9D9D9",
           flexDirection: "column",
           padding: "2rem",
           borderRadius: "10px",
@@ -24,7 +25,7 @@ const Register = () => {
           marginBottom:'150px'
         }}
       >
-        <div>Logos</div>
+        <div style={{display:'flex',justifyContent:"center",alignItems:"center"}}><img src={logo} style={{width:'50%',height:'10%',borderRadius:10,marginBottom:"1.5rem"}} /></div>
         <div style={{ fontSize: "2rem", marginBottom: "1rem" }}>
           Welcome to Alumni Connect
         </div>

@@ -1,4 +1,6 @@
 import React from "react";
+import { HiOutlineMail } from 'react-icons/hi';
+import  logo from './somaiyalogo.jpg';
 
 const Login = () => {
   return (
@@ -8,20 +10,21 @@ const Login = () => {
         alignItems: "center",
         justifyContent: "center",
         height: "100%",
-        backgroundColor: "var(--primaryD)",
+        // backgroundColor: "var(--primaryD)",
+        paddingTop:'5rem',
       }}
     >
       <div
         style={{
           display: "flex",
-          backgroundColor: "var(--white)",
+          backgroundColor: "#D9D9D9",
           flexDirection: "column",
           padding: "2rem",
           borderRadius: "10px",
           alignItems: "center",
         }}
       >
-        <div>Logos</div>
+        <div style={{display:'flex',justifyContent:"center",alignItems:"center"}}><img src={logo} style={{width:'50%',height:'10%',borderRadius:10,marginBottom:"1.5rem"}} /></div>
         <div style={{ fontSize: "2rem", marginBottom: "1rem" }}>
           Welcome to Alumni Connect
         </div>
@@ -59,11 +62,11 @@ const Login = () => {
             marginBottom: "1rem",
           }}
         >
-          <div style={{ display: "flex", flex: 1 }}>
+          <div style={{ display: "flex", flex: 1 ,marginLeft:"1rem"}}>
             <input type="checkbox" />
             <div>Remember Me</div>
           </div>
-          <a href="#da">Forgot Password</a>
+          <a href="#da" style={{marginRight:"1rem"}}>Forgot Password</a>
         </div>
         <button
           style={{
@@ -81,7 +84,7 @@ const Login = () => {
           Login
         </button>
         <div style={{ marginBottom: "1rem" }}>OR</div>
-        <div style={{ display: "flex", width: "100%" }}>
+        <div style={{ display: "flex", width: "95%" }}>
           <input
             style={{
               flex: 1,
@@ -90,10 +93,14 @@ const Login = () => {
               padding: "0.5rem",
               borderTopLeftRadius: "5px",
               borderBottomLeftRadius: "5px",
+              marginRight:5,
             }}
             placeholder="Login with Somaiya email id"
           />
-          <div>Mail Icon</div>
+          <div> <HiOutlineMail style={{
+            width:30,
+            height:30,
+          }}/> </div>
         </div>
       </div>
     </div>
