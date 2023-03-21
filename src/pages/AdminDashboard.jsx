@@ -1,6 +1,6 @@
 import React from "react";
 
-import somaiya from "../img/somaiya-logo.png"
+import somaiya from "../img/kjsieit-logo.svg"
 
 const Card = ({ children }) => {
   return (
@@ -51,7 +51,7 @@ const AdminDashboard = () => {
             justifyContent:"center",
             alignItems: "center",
             columnGap: "40px", 
-            color:"white",
+            color:"black",
             fontSize:18
           }}>
           <div style={{width: 75}}></div>
@@ -66,7 +66,6 @@ const AdminDashboard = () => {
           alignItems: "center",
           justifyContent: "center",
           height: "100%",
-          backgroundColor: "var(--primaryD)",
           flexDirection: "column",
         }}
       >
