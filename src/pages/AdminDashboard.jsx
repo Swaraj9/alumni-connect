@@ -44,14 +44,14 @@ const AdminDashboard = () => {
           margin:30
         }}
       >
-        <div style={{ width: "10%" }}><img src={somaiya} alt="Somaiya Logo" style={{backgroundColor:"white", width: 250,marginLeft:-15 }}/></div>
+        <div style={{ width: "10%" }}><img src={somaiya} alt="Somaiya Logo" style={{ width: 250,marginLeft:-15 }}/></div>
         <div 
           style={{
             display:"flex",
             justifyContent:"center",
             alignItems: "center",
             columnGap: "40px", 
-            color:"white",
+            color:"black",
             fontSize:18
           }}>
           <div style={{width: 75}}></div>
@@ -66,7 +66,6 @@ const AdminDashboard = () => {
           alignItems: "center",
           justifyContent: "center",
           height: "100%",
-          backgroundColor: "var(--primaryD)",
           flexDirection: "column",
         }}
       >
