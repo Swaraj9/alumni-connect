@@ -1,38 +1,25 @@
 import React from "react";
-import Input from "../components/Input";
+
 
 import somaiya from "../img/kjsieit-logo.svg"
 
-const Card = ({ children }) => {
-  return (
-    <div
-      style={{
-        backgroundColor: "#cccccc",
-        padding: "1rem",
-        borderRadius: "10px",
-        marginBottom: "1.5rem",
-      }}
-    >
-      {children}
-    </div>
-  );
-};
+const Inputt = (props) => {
+    return (
+      <input
+          style={{
+              width: "50%",
+              minWidth: "200px",
+              padding: "0.5rem",
+              borderRadius: "5px",
+              border: "1px solid grey",
+              outline: "none",
+              marginBottom: "0.5rem",
+          }}
+          {...props}
+      />
+    )
+}
 
-const EventCard = ({ children }) => {
-  return (
-    <div
-      style={{
-        backgroundColor: "#dddddd",
-        padding: "1rem",
-        borderRadius: "10px",
-        marginBottom: "1.5rem",
-        display:'flex'
-      }}
-    >
-      {children}
-    </div>
-  );
-};
 
 const TeacherDashboard = () => {
   return (
@@ -87,12 +74,11 @@ const TeacherDashboard = () => {
             </div>
 
             <div style={{height: 500, backgroundColor:"slateblue",margin:30}}>
-                
+                {/* <CarouselPage /> */}
             </div>
 
           <div>
             <button
-              title="View More"
               style={{
                 backgroundColor: "grey",
                 width: "70%",
@@ -113,15 +99,52 @@ const TeacherDashboard = () => {
                 Leaderboard
             </div>
 
+            <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Event Event Type</div>
+            <select name="Event Type" id="evntype" style={{
+                    borderRadius:5,
+                    width:"17rem",
+                    height:"2.0rem",
+                    color:"gray"
+                }}>
+                    <option value="select">Select Event Type</option>
+                    <option value="intern">Internship</option>
+                    <option value="works">Workshop</option>
+                    <option value="semi">Seminar</option>
+                    <option value="mentor">Mentorship</option>
+            </select>
 
-            <label htmlFor="evname">Event Name</label>
-            <Input placeholder="Workshop on AWS" id="evname" required/>
+            <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Event Name</div>
+            <Inputt placeholder="Workshop on AWS" id="evname" required/>
 
-            <label htmlFor="desc">Description</label>
-            <Input  id="desc"/>
+            <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Description</div>
+            <Inputt id="desc"/>
 
-            <label htmlFor="pre-skills">Preferred Skills</label>
-            <Input placeholder="Frontend, DevOps, etc" id="pre-skills" required/>
+            <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Preferred Skills</div>
+            <Inputt placeholder="Frontend, DevOps, etc" id="pre-skills" required/>
+
+            <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Prefered Time Slot</div>
+            <div style={{display:"flex",alignItems:"center"}}>
+            <Inputt type="date" style={{
+                width: "17rem",
+                minWidth: "200px",
+                padding: "0.5rem",
+                borderRadius: "5px",
+                border: "1px solid grey",
+                outline: "none",
+                marginRight:"1rem",
+            }} />
+            <div>to</div>
+            <Inputt type="date" style={{
+                width: "17rem",
+                minWidth: "200px",
+                padding: "0.5rem",
+                borderRadius: "5px",
+                border: "1px solid grey",
+                outline: "none",
+                marginLeft:"1rem",
+            }} />
+            </div>
+            
 
                 
           </div>

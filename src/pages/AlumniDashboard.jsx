@@ -1,6 +1,6 @@
 import React from "react";
 import Input from "../components/Input";
-import somaiya from "../img/somaiya-logo.png"
+import somaiya from "../img/kjsieit-logo.svg"
 
 const Card = ({ children }) => {
   return (
@@ -199,6 +199,7 @@ const AlumniDashboard = () => {
             </form>
             <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Description</div>
             <Input placeholder="Enter Details" />
+            
             <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Prefered Time Slot</div>
             <div style={{display:"flex",alignItems:"center"}}>
             <Input type="date" style={{
@@ -221,6 +222,7 @@ const AlumniDashboard = () => {
                 marginLeft:"1rem",
             }} />
             </div>
+
             <div style={{display:'flex', marginTop:'2rem'}}> 
             <button
                 style={{
