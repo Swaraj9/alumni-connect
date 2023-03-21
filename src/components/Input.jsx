@@ -10,7 +10,7 @@ const Input = (props) => {
             borderRadius: "5px",
             border: "1px solid grey",
             outline: "none",
-            marginBottom: "1rem",
+            marginBottom: "0.5rem",
         }}
         {...props}
     />

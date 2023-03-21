@@ -44,7 +44,7 @@ const AdminDashboard = () => {
           margin:30
         }}
       >
-        <div style={{ width: "10%" }}><img src={somaiya} alt="Somaiya Logo" style={{backgroundColor:"white", width: 250,marginLeft:-15 }}/></div>
+        <div style={{ width: "10%" }}><img src={somaiya} alt="Somaiya Logo" style={{ width: 250,marginLeft:-15 }}/></div>
         <div 
           style={{
             display:"flex",
