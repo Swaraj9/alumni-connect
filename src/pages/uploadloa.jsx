@@ -1,5 +1,6 @@
 import React from "react";
 import Input from "../components/Input";
+import { RxUpload } from 'react-icons/rx';
 import somaiya from "../img/kjsieit-logo.svg"
 
 const Card = ({ children }) => {
@@ -33,7 +34,7 @@ const EventCard = ({ children }) => {
   );
 };
 
-const AlumniDashboard = () => {
+const UploadLOA = () => {
   return (
     <div>
       <div
@@ -79,12 +80,10 @@ const AlumniDashboard = () => {
           }}
         >
             <div style={{ marginBottom: "1.5rem", fontSize:'2.5rem', color:'#A02929', alignSelf:'flex-start', marginTop:"1.5rem" }}>
-                <b>Alumni Dashboard</b>
+                <b>Upload LOA</b>
             </div>
-            <div style={{ marginBottom: "1.5rem", fontSize:'1.5rem', color:'var(--primary)', alignSelf:'flex-start'  }}>
-                Ongoing Events
-            </div>
-
+            
+{/* 
           <EventCard>
             <div style={{ flex: 1, height:'200px', width:'200px', backgroundColor: 'var(--white)', borderRadius:'5px', marginRight:'2rem' }}/>
             <div style={{ flex: 3 ,marginTop:"0.8rem", fontSize:20}}>
@@ -155,7 +154,7 @@ const AlumniDashboard = () => {
             </button>
               </div>
             </div>
-          </EventCard>
+          </EventCard> */}
 
           {/* <div>
             <button
@@ -176,9 +175,9 @@ const AlumniDashboard = () => {
               width: "100%",
             }}
           >
-            <div style={{ marginBottom: "1.0rem", fontSize:'1.5rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>
+            {/* <div style={{ marginBottom: "1.0rem", fontSize:'1.5rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>
                 Suggest Events
-            </div>
+            </div> */}
             <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Event Name</div>
             <Input placeholder="Event Name" />
             <form action="#">
@@ -197,30 +196,50 @@ const AlumniDashboard = () => {
                     <option value="mentor">Mentorship</option>
                 </select>
             </form>
-            <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Description</div>
-            <Input placeholder="Enter Details" />
-            <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Prefered Time Slot</div>
+            
+            <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Alumni Name</div>
+            <Input placeholder="Alumni Name" />
+            
+            <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Email Address</div>
+            <Input placeholder="Email Address" />
+            <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>LOA Upload</div>
+            
             <div style={{display:"flex",alignItems:"center"}}>
-            <Input type="date" style={{
-                width: "17rem",
-                minWidth: "200px",
-                padding: "0.5rem",
-                borderRadius: "5px",
-                border: "1px solid grey",
-                outline: "none",
-                marginRight:"1rem",
-            }} />
-            <div>to</div>
-            <Input type="date" style={{
-                width: "17rem",
-                minWidth: "200px",
-                padding: "0.5rem",
-                borderRadius: "5px",
-                border: "1px solid grey",
-                outline: "none",
-                marginLeft:"1rem",
-            }} />
+                <div>
+                <Input style={{
+                    width: "40%",
+                    minWidth: "200px",
+                    padding: "0.5rem",
+                    borderRadius: "5px",
+                    border: "1px solid grey",
+                    outline: "none",
+                    marginRight:"1rem"
+                }}/>
+                </div>
+                
+                <div>
+                <button
+                style={{
+                    minWidth: "200px",
+                    border: "none",
+                    backgroundColor: "var(--primary)",
+                    padding: "0.5rem",
+                    color: "var(--white)",
+                    borderRadius: "5px",
+                    fontSize: "1rem",
+                    marginRight:'1rem'
+                }}
+                >
+                Browse
+                <RxUpload style={{
+                    marginLeft:"1rem",
+                    width:16,
+                    height:16,
+                }}/>
+            </button>
+                </div>
             </div>
+            
             <div style={{display:'flex', marginTop:'2rem'}}> 
             <button
                 style={{
@@ -259,4 +278,4 @@ const AlumniDashboard = () => {
   );
 };
 
-export default AlumniDashboard;
+export default UploadLOA;
