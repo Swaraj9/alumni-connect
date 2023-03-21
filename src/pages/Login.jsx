@@ -1,6 +1,6 @@
 import React from "react";
 import { HiOutlineMail } from 'react-icons/hi';
-import  logo from '../img/somaiyalogo.jpg';
+import  logo from '../img/kjsieit-logo.svg';
 
 const Login = () => {
   return (

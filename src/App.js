@@ -3,14 +3,13 @@ import AdminDashboard from './pages/AdminDashboard';
 import AlumniDashboard from './pages/AlumniDashboard';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import TeacherDashboard from './pages/TeacherDashboard';
 
 
 function App() {
   return (
     <div className="App">
-      {/* <Register/> */}
-      <AlumniDashboard />
-      {/* <Login /> */}
+        <TeacherDashboard />
     </div>
   );
 }

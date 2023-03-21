@@ -1,6 +1,6 @@
 import React from "react";
 
-import somaiya from "../img/somaiya-logo.png"
+import somaiya from "../img/kjsieit-logo.svg"
 
 const Card = ({ children }) => {
   return (

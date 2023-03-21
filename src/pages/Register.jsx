@@ -1,6 +1,6 @@
 import React from "react";
 import Input from "../components/Input";
-import  logo from '../img/somaiyalogo.jpg';
+import  logo from '../img/kjsieit-logo.svg';
 
 const Register = () => {
   return (
