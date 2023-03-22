@@ -9,7 +9,7 @@ import UploadLOA from './pages/uploadloa';
 function App() {
   return (
     <div className="App">
-        <UploadLOA />
+        <TeacherDashboard />
     </div>
   );
 }
