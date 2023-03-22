@@ -36,41 +36,7 @@ const EventCard = ({ children }) => {
 
 const UploadLOA = () => {
   return (
-    <div>
-      <div
-        style={{
-          display: "flex",
-          height: "10%",
-          width: "100%",
-          margin:30
-        }}
-      >
-        <div style={{ width: "10%" }}><img src={somaiya} alt="Somaiya Logo" style={{ width: 250,marginLeft:-15 }}/></div>
-        <div 
-          style={{
-            display:"flex",
-            justifyContent:"center",
-            alignItems: "center",
-            columnGap: "40px", 
-            color:"black",
-            fontSize:18
-          }}>
-          <div style={{width: 75}}></div>
-          <div>Past Events</div>
-          <div>Check Rating</div>
-        </div>
-      </div>
-
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          height: "100%",
-          flexDirection: "column",
-        }}
-      >
-        <div
+    <div
           style={{
             width: "80%",
             backgroundColor: "white",
@@ -83,90 +49,7 @@ const UploadLOA = () => {
                 <b>Upload LOA</b>
             </div>
             
-{/* 
-          <EventCard>
-            <div style={{ flex: 1, height:'200px', width:'200px', backgroundColor: 'var(--white)', borderRadius:'5px', marginRight:'2rem' }}/>
-            <div style={{ flex: 3 ,marginTop:"0.8rem", fontSize:20}}>
-              <div>EventName</div>
-              <div><p >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum deleniti non corporis eveniet laudantium modi distinctio iure quis praesentium natus aperiam exercitationem consequatur eaque provident eos, doloremque facere eligendi vel?</p></div>
-              <div>
-              <button
-                style={{
-                    minWidth: "200px",
-                    border: "none",
-                    backgroundColor: "var(--primary)",
-                    padding: "0.5rem",
-                    color: "var(--white)",
-                    borderRadius: "5px",
-                    fontSize: "1rem",
-                    marginRight:'1rem'
-                }}
-                >
-                I'm Interested
-            </button>
-              </div>
-            </div>
-          </EventCard>
 
-          <EventCard>
-            <div style={{ flex: 1, height:'200px', width:'200px', backgroundColor: 'var(--white)', borderRadius:'5px', marginRight:'2rem' }}/>
-            <div style={{ flex: 3 ,marginTop:"0.8rem", fontSize:20}}>
-              <div>EventName</div>
-              <div><p >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum deleniti non corporis eveniet laudantium modi distinctio iure quis praesentium natus aperiam exercitationem consequatur eaque provident eos, doloremque facere eligendi vel?</p></div>
-              <div>
-              <button
-                style={{
-                    minWidth: "200px",
-                    border: "none",
-                    backgroundColor: "var(--primary)",
-                    padding: "0.5rem",
-                    color: "var(--white)",
-                    borderRadius: "5px",
-                    fontSize: "1rem",
-                    marginRight:'1rem'
-                }}
-                >
-                I'm Interested
-            </button>
-              </div>
-            </div>
-          </EventCard>
-
-          <EventCard>
-            <div style={{ flex: 1, height:'200px', width:'200px', backgroundColor: 'var(--white)', borderRadius:'5px', marginRight:'2rem' }}/>
-            <div style={{ flex: 3 ,marginTop:"0.8rem", fontSize:20}}>
-              <div>EventName</div>
-              <div><p >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum deleniti non corporis eveniet laudantium modi distinctio iure quis praesentium natus aperiam exercitationem consequatur eaque provident eos, doloremque facere eligendi vel?</p></div>
-              <div>
-              <button
-                style={{
-                    minWidth: "200px",
-                    border: "none",
-                    backgroundColor: "var(--primary)",
-                    padding: "0.5rem",
-                    color: "var(--white)",
-                    borderRadius: "5px",
-                    fontSize: "1rem",
-                    marginRight:'1rem'
-                }}
-                >
-                I'm Interested
-            </button>
-              </div>
-            </div>
-          </EventCard> */}
-
-          {/* <div>
-            <button
-              title="View More"
-              style={{
-                backgroundColor: "red",
-                width: "50%",
-                border: 0,
-                padding:1.5
-              }}
-            />
-          </div> */}
           <div
             style={{
               display: "flex",
@@ -273,8 +156,6 @@ const UploadLOA = () => {
         </div>
           </div>
         </div>
-      </div>
-    </div>
   );
 };
 

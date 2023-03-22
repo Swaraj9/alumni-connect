@@ -10,6 +10,8 @@ const Card = ({ children }) => {
         padding: "1rem",
         borderRadius: "10px",
         marginBottom: "1.5rem",
+        display:"flex",
+        alignItems:"center"
       }}
     >
       {children}
@@ -132,24 +134,36 @@ const AdminDashboard = () => {
             </div>
 
             <Card>
-              <div>AlumniName</div>
-              <div>Details</div>
-              <div>Rating</div>
+                <div style={{backgroundColor:"white",marginRight:"2rem",borderRadius:50,width:"5rem",height:"5rem"}}>
+                </div>
+                <div>
+                    <div>AlumniName</div>
+                    <div>Details</div>
+                    <div>Rating</div>
+                </div>
+              
             </Card>
 
             <Card>
-
-              <div>
-                <div>AlumniName</div>
-                <div>Details</div>
-              </div>
-              <div>Rating</div>
+                <div style={{backgroundColor:"white",marginRight:"2rem",borderRadius:50,width:"5rem",height:"5rem"}}>
+                </div>
+                <div>
+                    <div>AlumniName</div>
+                    <div>Details</div>
+                    <div>Rating</div>
+                </div>
+              
             </Card>
 
             <Card>
-              <div>AlumniName</div>
-              <div>Details</div>
-              <div>Rating</div>
+                <div style={{backgroundColor:"white",marginRight:"2rem",borderRadius:50,width:"5rem",height:"5rem"}}>
+                </div>
+                <div>
+                    <div>AlumniName</div>
+                    <div>Details</div>
+                    <div>Rating</div>
+                </div>
+              
             </Card>
             
           </div>
