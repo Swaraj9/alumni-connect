@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Input from "../components/Input";
 import  logo from '../img/kjsieit-logo.svg';
 
@@ -85,8 +86,8 @@ const Register = () => {
                 >
                 Reset
             </button>
-
         </div>
+        <Link to="/">Login Instead</Link>
       </div>
     </div>
   );

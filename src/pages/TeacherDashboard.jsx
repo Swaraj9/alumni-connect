@@ -43,7 +43,6 @@ const EventCard = ({ children }) => {
 
 const TeacherDashboard = () => {
   return (
-    <BrowserRouter>
     
       <div>
       
@@ -67,8 +66,8 @@ const TeacherDashboard = () => {
           }}>
           <div style={{width: 75}}></div>
           <NavLink to='/' style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>Create Event</NavLink>
-          <NavLink to='/responses'style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>View Responses</NavLink>
-          <NavLink to='/loaupload' style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>Upload LOA</NavLink>
+          <NavLink to='/teacher/responses'style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>View Responses</NavLink>
+          <NavLink to='/teacher/loaupload' style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>Upload LOA</NavLink>
         </div>
       </div>
 
@@ -89,7 +88,6 @@ const TeacherDashboard = () => {
       </div>
     </div>
     
-    </BrowserRouter>
     
     
   );

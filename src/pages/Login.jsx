@@ -1,5 +1,6 @@
 import React from "react";
 import { HiOutlineMail } from 'react-icons/hi';
+import { Link } from "react-router-dom";
 import  logo from '../img/kjsieit-logo.svg';
 
 const Login = () => {
@@ -102,6 +103,7 @@ const Login = () => {
             height:30,
           }}/> </div>
         </div>
+        <Link to="/register">Register</Link>
       </div>
     </div>
   );
