@@ -6,38 +6,6 @@ import UploadLOA from "./uploadloa";
 import Responses from "./Responses";
 import TeachCreate from "./TeachCreate";
 
-const Card = ({ children }) => {
-  return (
-    <div
-      style={{
-        backgroundColor: "#cccccc",
-        padding: "1rem",
-        borderRadius: "10px",
-        marginBottom: "1.5rem",
-      }}
-    >
-      {children}
-    </div>
-  );
-};
-
-
-
-const EventCard = ({ children }) => {
-  return (
-    <div
-      style={{
-        backgroundColor: "#dddddd",
-        padding: "1rem",
-        borderRadius: "10px",
-        marginBottom: "1.5rem",
-        display:'flex'
-      }}
-    >
-      {children}
-    </div>
-  );
-};
 
 const TeacherDashboard = () => {
   return (
@@ -67,6 +35,31 @@ const TeacherDashboard = () => {
           <NavLink to='/' style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>Create Event</NavLink>
           <NavLink to='/responses'style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>View Responses</NavLink>
           <NavLink to='/loaupload' style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>Upload LOA</NavLink>
+          
+          <div
+            style={{
+              position: "relative",
+              left: "29rem"
+            }}
+          >
+            <button
+                  style={{
+                      minWidth: "120px",
+                      border: "none",
+                      backgroundColor: "var(--primary)",
+                      padding: "0.5rem",
+                      color: "var(--white)",
+                      borderRadius: "5px",
+                      fontSize: "1rem",
+                      marginLeft:'1rem',
+
+                  }}
+                  >
+                  LOGOUT
+              </button>
+          </div>
+          
+
         </div>
       </div>
 

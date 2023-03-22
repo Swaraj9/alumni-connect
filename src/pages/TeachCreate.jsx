@@ -3,20 +3,6 @@ import Input from "../components/Input";
 import { RxUpload } from 'react-icons/rx';
 import somaiya from "../img/kjsieit-logo.svg"
 
-const Card = ({ children }) => {
-  return (
-    <div
-      style={{
-        backgroundColor: "#cccccc",
-        padding: "1rem",
-        borderRadius: "10px",
-        marginBottom: "1.5rem",
-      }}
-    >
-      {children}
-    </div>
-  );
-};
 
 const Inputt = (props) => {
     return (
@@ -35,21 +21,6 @@ const Inputt = (props) => {
     )
 }
 
-const EventCard = ({ children }) => {
-  return (
-    <div
-      style={{
-        backgroundColor: "#dddddd",
-        padding: "1.2rem",
-        borderRadius: "10px",
-        marginBottom: "1.5rem",
-        display:'flex'
-      }}
-    >
-      {children}
-    </div>
-  );
-};
 
 const TeachCreate = () => {
   return (
