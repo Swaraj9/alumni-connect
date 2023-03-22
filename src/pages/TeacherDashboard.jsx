@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import Input from "../components/Input";
 import { BrowserRouter, Route, Routes,NavLink } from "react-router-dom";
 import somaiya from "../img/kjsieit-logo.svg"
 import UploadLOA from "./uploadloa";
 import Responses from "./Responses";
 import TeachCreate from "./TeachCreate";
+import { AuthContext } from "../context/AuthContext";
+import AuthServices from "../services/AuthService";
 
 const Inputt = (props) => {
     return (
@@ -42,6 +44,18 @@ const EventCard = ({ children }) => {
 };
 
 const TeacherDashboard = () => {
+
+  const {setUser, setIsAuthenticated} = useContext(AuthContext);
+
+  const onClickLogoutHandler = () => {
+      AuthServices.logout().then(data => {
+        if(data.success){
+          setUser(data.user);
+          setIsAuthenticated(false);
+        }
+      })
+  }
+
   return (
 
       <div>
@@ -65,9 +79,35 @@ const TeacherDashboard = () => {
             fontSize:18
           }}>
           <div style={{width: 75}}></div>
-          <NavLink to='/create' style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>Create Event</NavLink>
-          <NavLink to='/teacher/responses'style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>View Responses</NavLink>
-          <NavLink to='/teacher/loaupload' style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>Upload LOA</NavLink>
+          <NavLink to='/' style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>Create Event</NavLink>
+          <NavLink to='/responses'style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>View Responses</NavLink>
+          <NavLink to='/loaupload' style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>Upload LOA</NavLink>
+          
+          <div
+            style={{
+              position: "relative",
+              left: "29rem"
+            }}
+          >
+            <button
+                  style={{
+                      minWidth: "120px",
+                      border: "none",
+                      backgroundColor: "var(--primary)",
+                      padding: "0.5rem",
+                      color: "var(--white)",
+                      borderRadius: "5px",
+                      fontSize: "1rem",
+                      marginLeft:'1rem',
+
+                  }}
+                  onClick={onClickLogoutHandler}
+                  >
+                  LOGOUT
+              </button>
+          </div>
+          
+
         </div>
       </div>
 

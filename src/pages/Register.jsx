@@ -1,8 +1,10 @@
+import React, { useRef, useState, useEffect } from "react";
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Input from "../components/Input";
 import  logo from '../img/kjsieit-logo.svg';
+import AuthServices from "../services/AuthService";
 import { default as ReactSelect } from "react-select";
 import { components } from "react-select";
 import Select from "react-select";
@@ -31,6 +33,29 @@ export const skillOptions = [
 ];
 
 const Register = () => {
+
+  const [username, setUsername] = useState(null);
+  const [password, setPassword] = useState(null);
+  const [message, setMessage] = useState(null);
+
+  let timeID = useRef(null);
+
+  useEffect(()=>{
+    return() => {
+      clearTimeout(timeID);
+    }
+  }, []);
+
+  const register = () => {
+    if(!username || !password){
+      setMessage("Enter username and password");
+      return;
+    }
+    AuthServices.register({username, password}).then(data=> {
+      
+    })
+  }
+
   const [selectedOptions, setSelectedOptions] = useState();
   function handleSelect(data) {
     setSelectedOptions(data);
@@ -42,7 +67,7 @@ const Register = () => {
         alignItems: "center",
         justifyContent: "center",
         height: "100%",
-        // backgroundColor: "var(--primaryD)",
+
       }}
     >
       <div
@@ -391,6 +416,7 @@ const Register = () => {
                     fontSize: "1rem",
                     marginRight:'1rem'
                 }}
+                onClick={register}
                 >
                 Submit
             </button>

@@ -1,9 +1,36 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { HiOutlineMail } from 'react-icons/hi';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 import  logo from '../img/kjsieit-logo.svg';
+import AuthServices from "../services/AuthService";
 
 const Login = () => {
+
+  const [username, setUsername] = useState(null);
+  const [password, setPassword] = useState(null);
+  const [message, setMessage] = useState(null);
+  const authContext = useContext(AuthContext);
+
+  const navigate = useNavigate();
+
+  const login = () => {
+    if(!username || !password){
+      setMessage("Enter username and password");
+      return;
+    }
+    AuthServices.login({username, password}).then(data=> {
+      const {isAuthenticated, user, message} = data;
+      if(isAuthenticated){
+        authContext.setUser(user);
+        authContext.setIsAuthenticated(isAuthenticated);
+        navigate('/alumni');
+      }else{
+        setMessage(message);
+      }
+    })
+  }
+  
   return (
     <div
       style={{
@@ -42,6 +69,8 @@ const Login = () => {
             outline: "none",
             marginBottom: "1rem",
           }}
+          value = {username}
+          onChange = {(e) => setUsername(e.target.value)}
           placeholder="SVV Net ID"
         />
         <input
@@ -54,8 +83,12 @@ const Login = () => {
             outline: "none",
             marginBottom: "1rem",
           }}
+          value = {password}
+          onChange = {(e) => setPassword(e.target.value)}
           placeholder="Password"
+          type="password"
         />
+        {message && <div>{message}</div>}
         <div
           style={{
             display: "flex",
@@ -81,6 +114,7 @@ const Login = () => {
             fontSize: "1.2rem",
             marginBottom: "1rem",
           }}
+          onClick={login}
         >
           Login
         </button>

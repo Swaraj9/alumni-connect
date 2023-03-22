@@ -16,26 +16,28 @@ passport.use(new JwtStrategy({
     jwtFromRequest : cookieExtractor,
     secretOrKey : "AlumniConnect"
 }, (payload, done) => {
-    User.findById({_id : payload.sub}, (err, user) => {
-        if(err)
-            return done(err, false);
-        if(user)
-            return done(null, user);
-        else   
-            return done(null, false);
-    })
+    User.findById({_id : payload.sub})
+        .then(user => {
+            if(user)
+                return done(null, user);
+            else
+                return done(null, false);
+        })
+        .catch(err => {
+            if(err)
+                return done(err, false);
+        })
 }));
 
 //Authentication
 passport.use(new LocalStrategy((username, password, done)=>{
-    User.findOne({username}, (err, user) => {
-        //Something went wrong with the database
-        if(err)
+    User.findOne({username})
+        .then(user => {
+            if(!user)
+                return done(null, false);
+            user.comparePassword(password, done);
+        })
+        .catch(err => {
             return done(err);
-        //User doesn't exist
-        if(!user)
-            return done(null, false);
-        //User exists
-        user.comparePassword(password, done);
-    });
+        })
 }));
