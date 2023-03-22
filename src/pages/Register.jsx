@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Input from "../components/Input";
 import  logo from '../img/kjsieit-logo.svg';
 import AuthServices from "../services/AuthService";
@@ -32,25 +32,41 @@ export const skillOptions = [
 
 const Register = () => {
 
+  const navigate = useNavigate();
+
   const [username, setUsername] = useState(null);
   const [password, setPassword] = useState(null);
+  const [role, setRole] = useState(null);
   const [message, setMessage] = useState(null);
 
-  let timeID = useRef(null);
+  let timerID = useRef(null);
 
   useEffect(()=>{
     return() => {
-      clearTimeout(timeID);
+      clearTimeout(timerID);
     }
   }, []);
 
+  const resetForm = () => {
+    setUsername("");
+    setPassword("");
+    setRole("");
+  }
+
   const register = () => {
-    if(!username || !password){
-      setMessage("Enter username and password");
+    if(!username || !password || !role){
+      setMessage("Enter username, password and role");
       return;
     }
-    AuthServices.register({username, password}).then(data=> {
-      
+    AuthServices.register({username, password, role}).then(data=> {
+      const {message} = data;
+      setMessage(message);
+      resetForm();
+      if(!message.msgError){
+        timerID = setTimeout(() => {
+          navigate('/');
+        }, 2000);
+      }
     })
   }
 
@@ -60,13 +76,13 @@ const Register = () => {
   }
   return (
     <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "100%",
-
-      }}
+    style={{
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      height: "100%",
+      
+    }}
     >
       <div
         style={{
@@ -95,7 +111,26 @@ const Register = () => {
           marginTop:"1.5rem" }}>
             Full Name
         </div>
-        <Input placeholder="Name"/>
+        <Input value={username} onChange={e => setUsername(e.target.value)} placeholder="Name"/>
+        <div style={{ 
+          marginBottom: "1.0rem", 
+          fontSize:'1.2rem', 
+          color:'var(--primary)', 
+          alignSelf:'flex-start', 
+          marginTop:"1.5rem" }}>
+            Password
+        </div>
+        <Input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Enter Password"/>
+        <div style={{ 
+          marginBottom: "1.0rem", 
+          fontSize:'1.2rem', 
+          color:'var(--primary)', 
+          alignSelf:'flex-start', 
+          marginTop:"1.5rem" }}>
+            Role
+        </div>
+        <Input value={role} onChange={e=>setRole(e.target.value)} placeholder="Role (alumni / teacher / admin)"/>
+        {message && <div>{message.msgBody}</div>}
 
         <form action="#">
                 <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Year of Admission</div>
@@ -224,15 +259,6 @@ const Register = () => {
           isSearchable={true}
           isMulti
         />
-        <div style={{ 
-          marginBottom: "1.0rem", 
-          fontSize:'1.2rem', 
-          color:'var(--primary)', 
-          alignSelf:'flex-start', 
-          marginTop:"1.5rem" }}>
-            Password
-        </div>
-        <Input placeholder="Enter Password"/>
 
         <div style={{ marginBottom: "1.5rem", fontSize:'1.5rem', color:'#A02929', alignSelf:'flex-start', marginTop:"1.5rem" }}>
           Further Education (Optional)

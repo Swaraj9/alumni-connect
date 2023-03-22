@@ -14,18 +14,21 @@ const signToken = (userID) => {
 
 userRouter.post('/register', (req, res) => {
     const {username, password, role} = req.body;
-    User.findOne({username}, (err, user)=>{
-        if(err)
-            res.status(500).json({message : {msgBody :'Error has occured', msgError: true}});
-        if(User)
-            res.status(400).json({message : {msgBody : "Username already taken", msgError: true}});    
-        else{
-            const newUser = new User({username, password, role});
-            newUser.save()
-                    .then(doc => res.status(201).json({message : {msgBody :'Accound Successfully Created', msgError: false}}))
-                    .catch(err => res.status(500).json({message : {msgBody :'Error has occured', msgError: true}}))
-        }    
-    });
+    User.findOne({username})
+        .then(user => {
+            if(user)
+                res.status(400).json({message : {msgBody : "Username already taken", msgError: true}});    
+            else{
+                const newUser = new User({username, password, role});
+                newUser.save()
+                        .then(doc => res.status(201).json({message : {msgBody :'Accound Successfully Created', msgError: false}}))
+                        .catch(err => res.status(500).json({message : {msgBody :'Error has occured', msgError: true}}))
+            }  
+        })
+        .catch(err => {
+            if(err)
+                res.status(500).json({message: {msgBody: "Error has occured", msgError: true}});
+        })
 });
 
 userRouter.post('/login', passport.authenticate('local', {session: false}), (req, res) => {

@@ -88,7 +88,7 @@ const Login = () => {
           placeholder="Password"
           type="password"
         />
-        {message && <div>{message}</div>}
+        {message && <div>{message.msgBody}</div>}
         <div
           style={{
             display: "flex",

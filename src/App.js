@@ -12,7 +12,6 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <NavLink to="/register">Register</NavLink>
         <NavLink to="/alumni">Alumni</NavLink>
         <NavLink to="/teacher">Teacher</NavLink>
         <NavLink to="/admin">Admin</NavLink>
