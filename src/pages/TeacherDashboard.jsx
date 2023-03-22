@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import Input from "../components/Input";
-import { BrowserRouter, Route, Routes,NavLink } from "react-router-dom";
+import { BrowserRouter, Route, Routes,NavLink, Outlet } from "react-router-dom";
 import somaiya from "../img/kjsieit-logo.svg"
 import UploadLOA from "./uploadloa";
 import Responses from "./Responses";
@@ -79,9 +79,9 @@ const TeacherDashboard = () => {
             fontSize:18
           }}>
           <div style={{width: 75}}></div>
-          <NavLink to='/' style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>Create Event</NavLink>
-          <NavLink to='/responses'style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>View Responses</NavLink>
-          <NavLink to='/loaupload' style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>Upload LOA</NavLink>
+          <NavLink to='' style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>Create Event</NavLink>
+          <NavLink to='responses'style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>View Responses</NavLink>
+          <NavLink to='loaupload' style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>Upload LOA</NavLink>
           
           <div
             style={{
@@ -120,11 +120,7 @@ const TeacherDashboard = () => {
           flexDirection: "column",
         }}
       >
-      <Routes>
-      <Route path='/create' element={<TeachCreate />} />
-      <Route path='/responses' element={<Responses />} />
-      <Route path='/loaupload' element={<UploadLOA />} />
-      </Routes>
+      <Outlet />
       </div>
     </div>
 

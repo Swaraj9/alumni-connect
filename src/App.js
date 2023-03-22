@@ -7,6 +7,9 @@ import AlumniDashboard from './pages/AlumniDashboard';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import TeacherDashboard from './pages/TeacherDashboard';
+import UploadLOA from "./pages/uploadloa";
+import Responses from "./pages/Responses";
+import TeachCreate from "./pages/TeachCreate";
 
 function App() {
   return (
@@ -19,7 +22,11 @@ function App() {
           <Route path='/' element={<Login/>}/>
           <Route path='register' element={<Register/>}/>
           <Route path="/alumni" element={<AlumniDashboard/>}/>
-          <Route path="/teacher" element={<TeacherDashboard/>}/>
+          <Route path="teacher" element={<TeacherDashboard/>}>
+            <Route path='' element={<TeachCreate />} />
+            <Route path='responses' element={<Responses />} />
+            <Route path='loaupload' element={<UploadLOA />} />
+          </Route>
           <Route path="/admin" element={<AdminDashboard/>}/>
         </Routes>
       </BrowserRouter>
