@@ -14,7 +14,7 @@ function App() {
   console.log(isAuthenticated);
   return (
     <div className="App">
-        <UploadLOA />
+        <TeacherDashboard />
     </div>
   );
 }
