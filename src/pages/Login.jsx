@@ -16,7 +16,7 @@ const Login = () => {
 
   const login = () => {
     if(!username || !password){
-      setMessage("Enter username and password");
+      setMessage({msgBody: "Enter username and password"});
       return;
     }
     AuthServices.login({username, password}).then(data=> {

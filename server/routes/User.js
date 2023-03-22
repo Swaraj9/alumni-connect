@@ -21,7 +21,7 @@ userRouter.post('/register', (req, res) => {
             else{
                 const newUser = new User({username, password, role});
                 newUser.save()
-                        .then(doc => res.status(201).json({message : {msgBody :'Accound Successfully Created', msgError: false}}))
+                        .then(doc => res.status(201).json({message : {msgBody :'Account Successfully Created', msgError: false}}))
                         .catch(err => res.status(500).json({message : {msgBody :'Error has occured', msgError: true}}))
             }  
         })
@@ -36,7 +36,9 @@ userRouter.post('/login', passport.authenticate('local', {session: false}), (req
         const {_id, username, role} = req.user;
         const token = signToken(_id);
         res.cookie('access_token', token, {httpOnly: true, sameSite: true});
-        res.status(200).json({isAuthenticated: true, user: {username, role}});
+        res.status(200).json({isAuthenticated: true, user: {username, role}, message: {msgBody: "Successfully logged in", msgError: false}});
+    }else{
+        res.status(500).json({isAuthenticated: false, user: {username: "", role: ""}, message: {msgBody: "Login failed", msgError: true}})
     }
 });
 

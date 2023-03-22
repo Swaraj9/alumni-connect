@@ -56,7 +56,7 @@ const Register = () => {
 
   const register = () => {
     if(!username || !password || !role){
-      setMessage("Enter username, password and role");
+      setMessage({msgBody: "Enter username, password and role"});
       return;
     }
     AuthServices.register({username, password, role}).then(data=> {
