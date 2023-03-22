@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import {AuthContext} from "../context/AuthContext";
 
 import somaiya from "../img/kjsieit-logo.svg"
+import AuthServices from "../services/AuthService";
 
 const Card = ({ children }) => {
   return (
@@ -36,6 +38,18 @@ const EventCard = ({ children }) => {
 };
 
 const AdminDashboard = () => {
+
+  const {setUser, setIsAuthenticated} = useContext(AuthContext);
+
+  const onClickLogoutHandler = () => {
+    AuthServices.logout().then(data => {
+      if(data.success){
+        setUser(data.user);
+        setIsAuthenticated(false);
+      }
+    })
+  }
+
   return (
     <div>
       <div
@@ -78,6 +92,7 @@ const AdminDashboard = () => {
                       marginLeft:'1rem',
 
                   }}
+                  onClick={onClickLogoutHandler}
                   >
                   LOGOUT
               </button>

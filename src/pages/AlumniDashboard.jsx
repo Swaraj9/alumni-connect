@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import Input from "../components/Input";
+import { AuthContext } from "../context/AuthContext";
 import somaiya from "../img/kjsieit-logo.svg"
+import AuthServices from "../services/AuthService";
 
 const Card = ({ children }) => {
   return (
@@ -34,6 +36,18 @@ const EventCard = ({ children }) => {
 };
 
 const AlumniDashboard = () => {
+
+  const {setUser, setIsAuthenticated} = useContext(AuthContext);
+
+  const onClickLogoutHandler = () => {
+    AuthServices.logout().then(data => {
+      if(data.success){
+        setUser(data.user);
+        setIsAuthenticated(false);
+      }
+    })
+  }
+
   return (
     <div>
       <div
@@ -76,6 +90,7 @@ const AlumniDashboard = () => {
                       marginLeft:'1rem',
 
                   }}
+                  onClick={onClickLogoutHandler}
                   >
                   LOGOUT
               </button>

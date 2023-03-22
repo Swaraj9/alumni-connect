@@ -9,9 +9,6 @@ import Register from './pages/Register';
 import TeacherDashboard from './pages/TeacherDashboard';
 
 function App() {
-  const {user, isAuthenticated} = useContext(AuthContext)
-  console.log(user);
-  console.log(isAuthenticated);
   return (
     <div className="App">
       <BrowserRouter>

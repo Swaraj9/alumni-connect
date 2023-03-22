@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import Input from "../components/Input";
 import { BrowserRouter, Route, Routes,NavLink } from "react-router-dom";
 import somaiya from "../img/kjsieit-logo.svg"
 import UploadLOA from "./uploadloa";
 import Responses from "./Responses";
 import TeachCreate from "./TeachCreate";
+import { AuthContext } from "../context/AuthContext";
+import AuthServices from "../services/AuthService";
 
 const Inputt = (props) => {
     return (
@@ -42,6 +44,18 @@ const EventCard = ({ children }) => {
 };
 
 const TeacherDashboard = () => {
+
+  const {setUser, setIsAuthenticated} = useContext(AuthContext);
+
+  const onClickLogoutHandler = () => {
+      AuthServices.logout().then(data => {
+        if(data.success){
+          setUser(data.user);
+          setIsAuthenticated(false);
+        }
+      })
+  }
+
   return (
     
       <div>
@@ -87,6 +101,7 @@ const TeacherDashboard = () => {
                       marginLeft:'1rem',
 
                   }}
+                  onClick={onClickLogoutHandler}
                   >
                   LOGOUT
               </button>

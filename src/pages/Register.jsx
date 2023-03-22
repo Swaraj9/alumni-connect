@@ -1,9 +1,33 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Input from "../components/Input";
 import  logo from '../img/kjsieit-logo.svg';
+import AuthServices from "../services/AuthService";
 
 const Register = () => {
+
+  const [username, setUsername] = useState(null);
+  const [password, setPassword] = useState(null);
+  const [message, setMessage] = useState(null);
+
+  let timeID = useRef(null);
+
+  useEffect(()=>{
+    return() => {
+      clearTimeout(timeID);
+    }
+  }, []);
+
+  const register = () => {
+    if(!username || !password){
+      setMessage("Enter username and password");
+      return;
+    }
+    AuthServices.register({username, password}).then(data=> {
+      
+    })
+  }
+
   return (
     <div
       style={{
@@ -69,6 +93,7 @@ const Register = () => {
                     fontSize: "1rem",
                     marginRight:'1rem'
                 }}
+                onClick={register}
                 >
                 Submit
             </button>
