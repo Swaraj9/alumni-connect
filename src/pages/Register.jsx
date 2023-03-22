@@ -11,7 +11,7 @@ const Register = () => {
         alignItems: "center",
         justifyContent: "center",
         height: "100%",
-        // backgroundColor: "var(--primaryD)",
+
       }}
     >
       <div

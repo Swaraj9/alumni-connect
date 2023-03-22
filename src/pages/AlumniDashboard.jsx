@@ -57,6 +57,30 @@ const AlumniDashboard = () => {
           <div style={{width: 75}}></div>
           <div>Past Events</div>
           <div>Check Rating</div>
+
+          <div
+            style={{
+              position: "relative",
+              left: "43rem"
+            }}
+          >
+            <button
+                  style={{
+                      minWidth: "120px",
+                      border: "none",
+                      backgroundColor: "var(--primary)",
+                      padding: "0.5rem",
+                      color: "var(--white)",
+                      borderRadius: "5px",
+                      fontSize: "1rem",
+                      marginLeft:'1rem',
+
+                  }}
+                  >
+                  LOGOUT
+              </button>
+          </div>
+
         </div>
       </div>
 

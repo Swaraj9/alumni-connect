@@ -66,8 +66,33 @@ const TeacherDashboard = () => {
           }}>
           <div style={{width: 75}}></div>
           <NavLink to='/' style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>Create Event</NavLink>
-          <NavLink to='/teacher/responses'style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>View Responses</NavLink>
-          <NavLink to='/teacher/loaupload' style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>Upload LOA</NavLink>
+          <NavLink to='/responses'style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>View Responses</NavLink>
+          <NavLink to='/loaupload' style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>Upload LOA</NavLink>
+          
+          <div
+            style={{
+              position: "relative",
+              left: "29rem"
+            }}
+          >
+            <button
+                  style={{
+                      minWidth: "120px",
+                      border: "none",
+                      backgroundColor: "var(--primary)",
+                      padding: "0.5rem",
+                      color: "var(--white)",
+                      borderRadius: "5px",
+                      fontSize: "1rem",
+                      marginLeft:'1rem',
+
+                  }}
+                  >
+                  LOGOUT
+              </button>
+          </div>
+          
+
         </div>
       </div>
 

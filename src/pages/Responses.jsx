@@ -20,21 +20,6 @@ const Card = ({ children }) => {
   );
 };
 
-const EventCard = ({ children }) => {
-  return (
-    <div
-      style={{
-        backgroundColor: "#dddddd",
-        padding: "1.2rem",
-        borderRadius: "10px",
-        marginBottom: "1.5rem",
-        display:'flex'
-      }}
-    >
-      {children}
-    </div>
-  );
-};
 
 const Responses = () => {
   return (
