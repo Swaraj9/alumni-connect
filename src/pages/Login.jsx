@@ -72,6 +72,7 @@ const Login = () => {
           value = {username}
           onChange = {(e) => setUsername(e.target.value)}
           placeholder="SVV Net ID"
+          required
         />
         <input
           style={{
@@ -87,8 +88,42 @@ const Login = () => {
           onChange = {(e) => setPassword(e.target.value)}
           placeholder="Password"
           type="password"
+          required
         />
-        {message && <div>{message.msgBody}</div>}
+        
+        {/* incorrect credentials prompt */}
+        {message && <div
+          style={{
+            border:"0.15rem solid #FFA500",
+            borderRadius: 5,
+            backgroundColor: "white",
+            width:"15rem",
+            minWidth:"13rem",
+            textAlign:"center",
+            marginBottom:8,
+            display:"flex",
+            justifyContent:"start",
+            alignItems:"center",
+            columnGap:"0.4rem",
+            padding:"0.1rem 0 0.2rem 0.4rem",
+            fontFamily:"sans-serif",
+            fontSize:"0.95rem"
+          }}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" 
+            width="1.45rem" height="1.45rem" 
+            fill="currentColor" 
+            class="bi bi-x" 
+            viewBox="0 0 15 15" 
+            color="#FFA500"
+            margin="-1rem"
+            >
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+          </svg>
+          {message.msgBody}
+        </div>}
+
+
         <div
           style={{
             display: "flex",
@@ -120,7 +155,7 @@ const Login = () => {
         </button>
         <div style={{ marginBottom: "1rem" }}>OR</div>
         <div style={{ display: "flex", width: "95%" }}>
-          <input
+          <button
             style={{
               flex: 1,
               border: "1px solid grey",
@@ -130,8 +165,9 @@ const Login = () => {
               borderBottomLeftRadius: "5px",
               marginRight:5,
             }}
-            placeholder="Login with Somaiya email id"
-          />
+          >
+            Login with Somaiya email id
+          </button>
           <div> <HiOutlineMail style={{
             width:30,
             height:30,

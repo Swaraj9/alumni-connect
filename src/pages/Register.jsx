@@ -6,6 +6,7 @@ import AuthServices from "../services/AuthService";
 import { default as ReactSelect } from "react-select";
 import { components } from "react-select";
 import Select from "react-select";
+import { RxTextAlignCenter } from "react-icons/rx";
 
 const Option = (props) => {
   return (
@@ -111,7 +112,41 @@ const Register = () => {
           marginTop:"1.5rem" }}>
             Full Name
         </div>
-        <Input value={username} onChange={e => setUsername(e.target.value)} placeholder="Name"/>
+
+        {/* incorrect credentials prompt */}
+        {message && <div
+          style={{
+            border:"0.15rem solid #FFA500",
+            borderRadius: 5,
+            backgroundColor: "white",
+            width:"15rem",
+            minWidth:"13rem",
+            textAlign:"center",
+            marginBottom:8,
+            display:"flex",
+            justifyContent:"start",
+            alignItems:"center",
+            columnGap:"0.4rem",
+            padding:"0.1rem 0 0.2rem 0.4rem",
+            fontFamily:"sans-serif",
+            fontSize:"0.95rem"
+          }}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" 
+            width="1.45rem" height="1.45rem"  
+            fill="currentColor" 
+            class="bi bi-x" 
+            viewBox="0 0 15 15" 
+            color="#FFA500"
+            margin="-1rem"
+            >
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+          </svg>
+          {message.msgBody}
+        </div>}
+        <Input value={username} onChange={e => setUsername(e.target.value)} placeholder="Name" />
+
+
         <div style={{ 
           marginBottom: "1.0rem", 
           fontSize:'1.2rem', 
@@ -129,8 +164,10 @@ const Register = () => {
           marginTop:"1.5rem" }}>
             Role
         </div>
+
+        
         <Input value={role} onChange={e=>setRole(e.target.value)} placeholder="Role (alumni / teacher / admin)"/>
-        {message && <div>{message.msgBody}</div>}
+        
 
         <form action="#">
                 <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Year of Admission</div>
