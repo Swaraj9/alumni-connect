@@ -89,24 +89,18 @@ const UploadLOA = () => {
             
             <div style={{display:"flex",alignItems:"center"}}>
                 <div>
-                <Input style={{
-                    width: "40%",
-                    minWidth: "200px",
-                    padding: "0.5rem",
-                    borderRadius: "5px",
-                    border: "1px solid grey",
-                    outline: "none",
-                    marginRight:"1rem"
-                }}/>
+                <Input id='browse' type='file' />
                 </div>
                 
-                <div>
-                <button
+                {/* <div>
+                <label for='browse'
                 style={{
                     minWidth: "200px",
                     border: "none",
                     backgroundColor: "var(--primary)",
                     padding: "0.5rem",
+                    paddingLeft:"1.5rem",
+                    paddingRight:"1.5rem",
                     color: "var(--white)",
                     borderRadius: "5px",
                     fontSize: "1rem",
@@ -119,8 +113,8 @@ const UploadLOA = () => {
                     width:16,
                     height:16,
                 }}/>
-            </button>
-                </div>
+            </label>
+                </div> */}
             </div>
             
             <div style={{display:'flex', marginTop:'2rem'}}> 
