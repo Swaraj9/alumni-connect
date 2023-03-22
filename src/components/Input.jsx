@@ -4,7 +4,7 @@ const Input = (props) => {
   return (
     <input
         style={{
-            width: "90%",
+            width: "95%",
             minWidth: "200px",
             padding: "0.5rem",
             borderRadius: "5px",
