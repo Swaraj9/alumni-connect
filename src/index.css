@@ -43,3 +43,14 @@ code {
   justify-content: space-between;
   user-select: none;
 }
+
+input[type=file]::file-selector-button {
+  margin-right: 20px;
+  border: none;
+  background: #EE1D25;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  width: 7.5rem;
+}
