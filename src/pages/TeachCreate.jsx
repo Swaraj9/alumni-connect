@@ -39,9 +39,9 @@ const TeachCreate = () => {
                 Create Event
             </div>
 
-            <div style={{height: 500, backgroundColor:"slateblue",margin:30}}>
+            {/* <div style={{height: 500, backgroundColor:"slateblue",margin:30}}>
                 
-            </div>
+            </div> */}
 
           {/* <div>
             <button

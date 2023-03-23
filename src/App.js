@@ -11,6 +11,7 @@ import UploadLOA from "./pages/uploadloa";
 import Responses from "./pages/Responses";
 import TeachCreate from "./pages/TeachCreate";
 import PrivateRoute from './PrivateRoute';
+import OngoingTeach from './pages/OngoingTeach';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path='' element={<TeachCreate />} />
             <Route path='responses' element={<Responses />} />
             <Route path='loaupload' element={<UploadLOA />} />
+            <Route path='ongoing' element={<OngoingTeach />} />
           </Route>
           <Route path="/admin" element={<PrivateRoute roles = {['admin']}><AdminDashboard/></PrivateRoute>}/>
         </Routes>
