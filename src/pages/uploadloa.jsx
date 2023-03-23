@@ -43,6 +43,7 @@ const UploadLOA = () => {
             padding: "2rem",
             paddingTop:"0.5rem",
             borderRadius: "10px",
+            marginLeft: "6rem" 
           }}
         >
             <div style={{ marginBottom: "1.5rem", fontSize:'2.5rem', color:'#A02929', alignSelf:'flex-start', marginTop:"1.5rem" }}>

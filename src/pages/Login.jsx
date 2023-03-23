@@ -50,6 +50,7 @@ const Login = () => {
           padding: "2rem",
           borderRadius: "10px",
           alignItems: "center",
+          marginLeft: "7.5rem" 
         }}
       >
         <div style={{display:'flex',justifyContent:"center",alignItems:"center"}}><img alt="logo" src={logo} style={{width:'50%',height:'10%',borderRadius:10,marginBottom:"1.5rem"}} /></div>

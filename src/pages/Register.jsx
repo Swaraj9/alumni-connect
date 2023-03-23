@@ -82,6 +82,7 @@ const Register = () => {
       alignItems: "center",
       justifyContent: "center",
       height: "100%",
+      marginLeft: "5.5rem" 
       
     }}
     >

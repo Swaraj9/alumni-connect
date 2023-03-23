@@ -83,7 +83,7 @@ const TeacherDashboard = () => {
           <NavLink to='' style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>Create Event</NavLink>
           <NavLink to='responses'style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>View Responses</NavLink>
           <NavLink to='loaupload' style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>Upload LOA</NavLink>
-          <NavLink to='ongoing' style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>Ongoing Events</NavLink>
+          <NavLink to='ongoing' style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>Events</NavLink>
           <NavLink to='eventend' style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>Event End</NavLink>
           </div>
           <div
@@ -101,7 +101,7 @@ const TeacherDashboard = () => {
                       color: "var(--white)",
                       borderRadius: "5px",
                       fontSize: "1rem",
-                      marginLeft:'-15rem',
+                      marginLeft:'-12rem',
 
                   }}
                   onClick={onClickLogoutHandler}

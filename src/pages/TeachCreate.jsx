@@ -30,6 +30,7 @@ const TeachCreate = () => {
             backgroundColor: "white",
             padding: "2rem",
             borderRadius: "10px",
+            marginLeft: "6rem" 
           }}
         >
             <div style={{ marginBottom: "1.5rem", fontSize:'2.5rem', color:'#A02929', alignSelf:'flex-start' }}>
@@ -38,10 +39,6 @@ const TeachCreate = () => {
             <div style={{ marginBottom: "1.5rem", fontSize:'1.5rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>
                 Create Event
             </div>
-
-            {/* <div style={{height: 500, backgroundColor:"slateblue",margin:30}}>
-                
-            </div> */}
 
           {/* <div>
             <button
