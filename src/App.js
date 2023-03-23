@@ -12,6 +12,7 @@ import Responses from "./pages/Responses";
 import TeachCreate from "./pages/TeachCreate";
 import PrivateRoute from './PrivateRoute';
 import OngoingTeach from './pages/OngoingTeach';
+import EventEnd from './pages/EventEnd';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path='responses' element={<Responses />} />
             <Route path='loaupload' element={<UploadLOA />} />
             <Route path='ongoing' element={<OngoingTeach />} />
+            <Route path='eventend' element={<EventEnd />} />
           </Route>
           <Route path="/admin" element={<PrivateRoute roles = {['admin']}><AdminDashboard/></PrivateRoute>}/>
         </Routes>
