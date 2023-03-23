@@ -3,6 +3,7 @@ import {AuthContext} from "../context/AuthContext";
 
 import somaiya from "../img/kjsieit-logo.svg"
 import AuthServices from "../services/AuthService";
+import Input from "../components/Input";
 
 const Card = ({ children }) => {
   return (
@@ -71,8 +72,8 @@ const AdminDashboard = () => {
             fontSize:18
           }}>
           <div style={{width: 75}}></div>
-          <div>Past Events</div>
-          <div>Check Rating</div>
+          {/* <div>Past Events</div>
+          <div>Check Rating</div> */}
 
           <div
             style={{
@@ -89,7 +90,7 @@ const AdminDashboard = () => {
                       color: "var(--white)",
                       borderRadius: "5px",
                       fontSize: "1rem",
-                      marginLeft:'1rem',
+                      marginLeft:'15rem',
 
                   }}
                   onClick={onClickLogoutHandler}
@@ -126,31 +127,79 @@ const AdminDashboard = () => {
                 Past Events
             </div>
 
-          <EventCard>
-            <div style={{ flex: 1, height:'200px', width:'200px', backgroundColor: 'var(--white)', borderRadius:'5px', marginRight:'2rem' }}/>
-            <div style={{ flex: 3 ,marginTop:"30px", fontSize:20}}>
+            <Card>
+            <div style={{  height:'100px', width:'100px', backgroundColor: 'var(--white)', borderRadius:'50rem', marginRight:'2rem', }}/>
+            <div style={{ flex: 3 ,marginTop:"0.8rem", fontSize:20}}>
               <div>EventName</div>
               <div><p >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum deleniti non corporis eveniet laudantium modi distinctio iure quis praesentium natus aperiam exercitationem consequatur eaque provident eos, doloremque facere eligendi vel?</p></div>
+              {/* <div>
+              <button
+                style={{
+                    minWidth: "200px",
+                    border: "none",
+                    backgroundColor: "var(--primary)",
+                    padding: "0.5rem",
+                    color: "var(--white)",
+                    borderRadius: "5px",
+                    fontSize: "1rem",
+                    marginRight:'1rem'
+                }}
+                >
+                I'm Interested
+            </button>
+              </div> */}
             </div>
-          </EventCard>
+          </Card>
 
-          <EventCard>
-            <div style={{ flex: 1, height:'200px', width:'200px', backgroundColor: 'var(--white)', borderRadius:'5px', marginRight:'2rem' }}/>
-            <div style={{ flex: 3 ,marginTop:"30px", fontSize:20}}>
+          <Card>
+            <div style={{  height:'100px', width:'100px', backgroundColor: 'var(--white)', borderRadius:'50rem', marginRight:'2rem', }}/>
+            <div style={{ flex: 3 ,marginTop:"0.8rem", fontSize:20}}>
               <div>EventName</div>
-              <div><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum deleniti non corporis eveniet laudantium modi distinctio iure quis praesentium natus aperiam exercitationem consequatur eaque provident eos, doloremque facere eligendi vel?</p></div>
+              <div><p >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum deleniti non corporis eveniet laudantium modi distinctio iure quis praesentium natus aperiam exercitationem consequatur eaque provident eos, doloremque facere eligendi vel?</p></div>
+              {/* <div>
+              <button
+                style={{
+                    minWidth: "200px",
+                    border: "none",
+                    backgroundColor: "var(--primary)",
+                    padding: "0.5rem",
+                    color: "var(--white)",
+                    borderRadius: "5px",
+                    fontSize: "1rem",
+                    marginRight:'1rem'
+                }}
+                >
+                I'm Interested
+            </button>
+              </div> */}
             </div>
-          </EventCard>
+          </Card>
 
-          <EventCard>
-            <div style={{ flex: 1, height:'200px', width:'200px', backgroundColor: 'var(--white)', borderRadius:'5px', marginRight:'2rem' }}/>
-            <div style={{ flex: 3 ,marginTop:"30px", fontSize:20}}>
+          <Card>
+            <div style={{  height:'100px', width:'100px', backgroundColor: 'var(--white)', borderRadius:'50rem', marginRight:'2rem', }}/>
+            <div style={{ flex: 3 ,marginTop:"0.8rem", fontSize:20}}>
               <div>EventName</div>
-              <div><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum deleniti non corporis eveniet laudantium modi distinctio iure quis praesentium natus aperiam exercitationem consequatur eaque provident eos, doloremque facere eligendi vel?</p></div>
+              <div><p >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum deleniti non corporis eveniet laudantium modi distinctio iure quis praesentium natus aperiam exercitationem consequatur eaque provident eos, doloremque facere eligendi vel?</p></div>
+              {/* <div>
+              <button
+                style={{
+                    minWidth: "200px",
+                    border: "none",
+                    backgroundColor: "var(--primary)",
+                    padding: "0.5rem",
+                    color: "var(--white)",
+                    borderRadius: "5px",
+                    fontSize: "1rem",
+                    marginRight:'1rem'
+                }}
+                >
+                I'm Interested
+            </button>
+              </div> */}
             </div>
-          </EventCard>
+          </Card>
 
-          <div>
+          {/* <div>
             <button
               title="View More"
               style={{
@@ -160,7 +209,7 @@ const AdminDashboard = () => {
                 padding:1.5
               }}
             />
-          </div>
+          </div> */}
           <div
             style={{
               display: "flex",
@@ -169,7 +218,95 @@ const AdminDashboard = () => {
               width: "100%",
             }}
           >
-            <div style={{ marginBottom: "1.5rem", fontSize:'1.5rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>
+            <div
+            style={{
+              display: "flex",
+              alignItems: "stretch",
+              flexDirection: "column",
+              width: "100%",
+            }}
+          >
+            <div style={{ marginBottom: "1.0rem", fontSize:'1.5rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>
+                Suggest Events
+            </div>
+            <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Event Name</div>
+            <Input placeholder="Event Name" />
+            <form action="#">
+                <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Event Type</div>
+                <select name="Event Type" id="etype" style={{
+                    
+                    borderRadius:5,
+                    width:"17rem",
+                    height:"2.0rem",
+                    color:"gray"
+                }}>
+                    <option value="select">Select Event Type</option>
+                    <option value="intern">Internship</option>
+                    <option value="works">Workshop</option>
+                    <option value="semi">Seminar</option>
+                    <option value="mentor">Mentorship</option>
+                </select>
+            </form>
+            <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Description</div>
+            <Input placeholder="Enter Details" />
+            
+            <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Prefered Time Slot</div>
+            <div style={{display:"flex",alignItems:"center"}}>
+            <Input type="date" style={{
+                width: "17rem",
+                minWidth: "200px",
+                padding: "0.5rem",
+                borderRadius: "5px",
+                border: "1px solid grey",
+                outline: "none",
+                marginRight:"1rem",
+            }} />
+            <div>to</div>
+            <Input type="date" style={{
+                width: "17rem",
+                minWidth: "200px",
+                padding: "0.5rem",
+                borderRadius: "5px",
+                border: "1px solid grey",
+                outline: "none",
+                marginLeft:"1rem",
+            }} />
+            </div>
+
+            <div style={{display:'flex', marginTop:'2rem'}}> 
+            <button
+                style={{
+                    minWidth: "200px",
+                    border: "none",
+                    backgroundColor: "var(--primary)",
+                    padding: "0.5rem",
+                    color: "var(--white)",
+                    borderRadius: "5px",
+                    fontSize: "1rem",
+                    marginRight:'1rem'
+                }}
+                >
+                Submit
+            </button>
+            <button
+                style={{
+                    minWidth: "200px",
+                    border: "none",
+                    backgroundColor: "var(--primary)",
+                    padding: "0.5rem",
+                    color: "var(--white)",
+                    borderRadius: "5px",
+                    fontSize: "1rem",
+                    marginLeft:'1rem'
+                }}
+                >
+                Reset
+            </button>
+
+        </div>
+          </div>
+
+            {/* <div style={{ marginBottom: "1.5rem", fontSize:'1.5rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>
                 Leaderboard
             </div>
 
@@ -204,7 +341,7 @@ const AdminDashboard = () => {
                     <div>Rating</div>
                 </div>
               
-            </Card>
+            </Card> */}
             
           </div>
         </div>

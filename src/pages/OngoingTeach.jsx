@@ -54,7 +54,7 @@ const OngoingTeach = () => {
                 Leaderboard
             </div> */}
 
-<Card>
+          <Card>
             <div style={{  height:'100px', width:'100px', backgroundColor: 'var(--white)', borderRadius:'50rem', marginRight:'2rem', }}/>
             <div style={{ flex: 3 ,marginTop:"0.8rem", fontSize:20}}>
               <div>EventName</div>
