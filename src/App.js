@@ -11,6 +11,7 @@ import UploadLOA from "./pages/uploadloa";
 import Responses from "./pages/Responses";
 import TeachCreate from "./pages/TeachCreate";
 import PrivateRoute from './PrivateRoute';
+import LetterOfAppreciation from "./pages/LoaEmail";
 import OngoingTeach from './pages/OngoingTeach';
 import EventEnd from './pages/EventEnd';
 
@@ -18,10 +19,8 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <NavLink to="/alumni">Alumni</NavLink>
-        <NavLink to="/teacher">Teacher</NavLink>
-        <NavLink to="/admin">Admin</NavLink>
         <Routes>
+          <Route path='/LoaEmail' element={<LetterOfAppreciation/>}/>
           <Route path='/' element={<Login/>}/>
           <Route path='/register' element={<Register/>}/>
           <Route path="/alumni" element={<PrivateRoute roles = {['alumni']}><AlumniDashboard/></PrivateRoute>}/>
