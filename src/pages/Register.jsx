@@ -261,7 +261,7 @@ const Register = () => {
         </div>
         <Input placeholder="Contact Number 1"/>
 
-        <div style={{ 
+        {/* <div style={{ 
           marginBottom: "1.0rem", 
           fontSize:'1.2rem', 
           color:'var(--primary)', 
@@ -269,7 +269,7 @@ const Register = () => {
           marginTop:"1.5rem" }}>
             Alternate Contact Number
         </div>
-        <Input placeholder="Contact Number 2"/>
+        <Input placeholder="Contact Number 2"/> */}
 
         <div style={{ 
           marginBottom: "1.0rem", 
@@ -298,7 +298,7 @@ const Register = () => {
           isMulti
         />
 
-        <div style={{ marginBottom: "1.5rem", fontSize:'1.5rem', color:'#A02929', alignSelf:'flex-start', marginTop:"1.5rem" }}>
+        {/* <div style={{ marginBottom: "1.5rem", fontSize:'1.5rem', color:'#A02929', alignSelf:'flex-start', marginTop:"1.5rem" }}>
           Further Education (Optional)
         </div>
         <div style={{ 
@@ -465,7 +465,7 @@ const Register = () => {
           marginTop:"1.5rem" }}>
             Past Experience
         </div>
-        <Input placeholder="Past Experience"/>
+        <Input placeholder="Past Experience"/> */}
         <div style={{display:'flex', marginTop:'2rem',justifyContent:"center",alignSelf:"center"}}> 
             <button
                 style={{

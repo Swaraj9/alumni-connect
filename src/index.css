@@ -3,6 +3,12 @@
   --primaryD: #A02929;
   --white: #eeeeee;
 }
+button{
+  cursor: pointer;
+}
+button:active{
+  opacity: 70%;
+}
 
 body {
   margin: 0;

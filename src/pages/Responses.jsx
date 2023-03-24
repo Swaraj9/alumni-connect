@@ -1,6 +1,6 @@
 import React from "react";
 import Input from "../components/Input";
-import { RxUpload } from 'react-icons/rx';
+import { CgProfile } from 'react-icons/cg';
 import somaiya from "../img/kjsieit-logo.svg"
 
 const Card = ({ children }) => {
@@ -41,34 +41,37 @@ const Responses = () => {
             </div> */}
 
             <Card>
-                <div style={{backgroundColor:"white",marginRight:"2rem",borderRadius:50,width:"5rem",height:"5rem"}}>
+                <div style={{backgroundColor:"white",marginRight:"2rem",borderRadius:50,width:"5rem",height:"5rem",alignItems:"center",justifyContent: "center"}}>
+                  <CgProfile style={{width:80,height:80}} />
                 </div>
                 <div>
-                    <div>AlumniName</div>
-                    <div>Details</div>
-                    <div>Rating</div>
+                    <div>John</div>
+                    <div>Skills: Java</div>
+                    <div>Email: johnw@gmail.com</div>
                 </div>
               
             </Card>
 
             <Card>
-                <div style={{backgroundColor:"white",marginRight:"2rem",borderRadius:50,width:"5rem",height:"5rem"}}>
+            <div style={{backgroundColor:"white",marginRight:"2rem",borderRadius:50,width:"5rem",height:"5rem",alignItems:"center",justifyContent: "center"}}>
+                  <CgProfile style={{width:80,height:80}} />
                 </div>
                 <div>
-                    <div>AlumniName</div>
-                    <div>Details</div>
-                    <div>Rating</div>
+                    <div>Bill</div>
+                    <div>Skills: Python</div>
+                    <div>Email: itisbill@gmail.com</div>
                 </div>
               
             </Card>
 
             <Card>
-                <div style={{backgroundColor:"white",marginRight:"2rem",borderRadius:50,width:"5rem",height:"5rem"}}>
+            <div style={{backgroundColor:"white",marginRight:"2rem",borderRadius:50,width:"5rem",height:"5rem",alignItems:"center",justifyContent: "center"}}>
+                  <CgProfile style={{width:80,height:80}} />
                 </div>
                 <div>
-                    <div>AlumniName</div>
-                    <div>Details</div>
-                    <div>Rating</div>
+                    <div>Keanu</div>
+                    <div>Skills: Cloud Computing</div>
+                    <div>Email: kreevs@gmail.com</div>
                 </div>
               
             </Card>

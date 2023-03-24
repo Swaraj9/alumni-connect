@@ -1,6 +1,6 @@
 import React from "react";
 import Input from "../components/Input";
-import { RxUpload } from 'react-icons/rx';
+import { TbHexagonNumber1,TbHexagonNumber2,TbHexagonNumber3 } from 'react-icons/tb';
 import somaiya from "../img/kjsieit-logo.svg"
 
 const Card = ({ children }) => {
@@ -54,8 +54,10 @@ const OngoingTeach = () => {
                 Leaderboard
             </div> */}
 
-<Card>
-            <div style={{  height:'100px', width:'100px', backgroundColor: 'var(--white)', borderRadius:'50rem', marginRight:'2rem', }}/>
+          <Card>
+            <div style={{  height:'100px', width:'100px', backgroundColor: 'var(--white)', borderRadius:'50rem', marginRight:'2rem', }}>
+              <TbHexagonNumber1 style={{width:100,height:100}} />
+            </div>
             <div style={{ flex: 3 ,marginTop:"0.8rem", fontSize:20}}>
               <div>EventName</div>
               <div><p >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum deleniti non corporis eveniet laudantium modi distinctio iure quis praesentium natus aperiam exercitationem consequatur eaque provident eos, doloremque facere eligendi vel?</p></div>
@@ -79,8 +81,9 @@ const OngoingTeach = () => {
           </Card>
 
           <Card>
-            <div style={{  height:'100px', width:'100px', backgroundColor: 'var(--white)', borderRadius:'50rem', marginRight:'2rem', }}/>
-            <div style={{ flex: 3 ,marginTop:"0.8rem", fontSize:20}}>
+          <div style={{  height:'100px', width:'100px', backgroundColor: 'var(--white)', borderRadius:'50rem', marginRight:'2rem', }}>
+              <TbHexagonNumber2 style={{width:100,height:100}} />
+            </div>            <div style={{ flex: 3 ,marginTop:"0.8rem", fontSize:20}}>
               <div>EventName</div>
               <div><p >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum deleniti non corporis eveniet laudantium modi distinctio iure quis praesentium natus aperiam exercitationem consequatur eaque provident eos, doloremque facere eligendi vel?</p></div>
               {/* <div>
@@ -103,8 +106,9 @@ const OngoingTeach = () => {
           </Card>
 
           <Card>
-            <div style={{  height:'100px', width:'100px', backgroundColor: 'var(--white)', borderRadius:'50rem', marginRight:'2rem', }}/>
-            <div style={{ flex: 3 ,marginTop:"0.8rem", fontSize:20}}>
+          <div style={{  height:'100px', width:'100px', backgroundColor: 'var(--white)', borderRadius:'50rem', marginRight:'2rem', }}>
+              <TbHexagonNumber3 style={{width:100,height:100}} />
+            </div>            <div style={{ flex: 3 ,marginTop:"0.8rem", fontSize:20}}>
               <div>EventName</div>
               <div><p >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum deleniti non corporis eveniet laudantium modi distinctio iure quis praesentium natus aperiam exercitationem consequatur eaque provident eos, doloremque facere eligendi vel?</p></div>
               {/* <div>
@@ -131,8 +135,9 @@ const OngoingTeach = () => {
           </div>
 
           <Card>
-            <div style={{  height:'100px', width:'100px', backgroundColor: 'var(--white)', borderRadius:'50rem', marginRight:'2rem', }}/>
-            <div style={{ flex: 3 ,marginTop:"0.8rem", fontSize:20}}>
+          <div style={{  height:'100px', width:'100px', backgroundColor: 'var(--white)', borderRadius:'50rem', marginRight:'2rem', }}>
+              <TbHexagonNumber1 style={{width:100,height:100}} />
+            </div>            <div style={{ flex: 3 ,marginTop:"0.8rem", fontSize:20}}>
               <div>EventName</div>
               <div><p >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum deleniti non corporis eveniet laudantium modi distinctio iure quis praesentium natus aperiam exercitationem consequatur eaque provident eos, doloremque facere eligendi vel?</p></div>
               <div>
@@ -155,8 +160,9 @@ const OngoingTeach = () => {
           </Card>
 
           <Card>
-            <div style={{  height:'100px', width:'100px', backgroundColor: 'var(--white)', borderRadius:'50rem', marginRight:'2rem', }}/>
-            <div style={{ flex: 3 ,marginTop:"0.8rem", fontSize:20}}>
+          <div style={{  height:'100px', width:'100px', backgroundColor: 'var(--white)', borderRadius:'50rem', marginRight:'2rem', }}>
+              <TbHexagonNumber2 style={{width:100,height:100}} />
+            </div>            <div style={{ flex: 3 ,marginTop:"0.8rem", fontSize:20}}>
               <div>EventName</div>
               <div><p >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum deleniti non corporis eveniet laudantium modi distinctio iure quis praesentium natus aperiam exercitationem consequatur eaque provident eos, doloremque facere eligendi vel?</p></div>
               <div>
@@ -179,8 +185,9 @@ const OngoingTeach = () => {
           </Card>
 
           <Card>
-            <div style={{  height:'100px', width:'100px', backgroundColor: 'var(--white)', borderRadius:'50rem', marginRight:'2rem', }}/>
-            <div style={{ flex: 3 ,marginTop:"0.8rem", fontSize:20}}>
+          <div style={{  height:'100px', width:'100px', backgroundColor: 'var(--white)', borderRadius:'50rem', marginRight:'2rem', }}>
+              <TbHexagonNumber3 style={{width:100,height:100}} />
+            </div>            <div style={{ flex: 3 ,marginTop:"0.8rem", fontSize:20}}>
               <div>EventName</div>
               <div><p >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum deleniti non corporis eveniet laudantium modi distinctio iure quis praesentium natus aperiam exercitationem consequatur eaque provident eos, doloremque facere eligendi vel?</p></div>
               <div>
