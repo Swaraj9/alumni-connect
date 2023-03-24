@@ -36,9 +36,6 @@ const TeachCreate = () => {
 
   const onValueChange = (e) =>{
     setUser({...eve,[e.target.name]: e.target.value})
-    console.log(eve);
-    console.log(frdate);
-    console.log(todate);
 }
   const addEventDetails = () => {
     const eventdet ={
@@ -117,10 +114,10 @@ const TeachCreate = () => {
             <Inputt onChange={(e) => onValueChange(e)} name='name' placeholder="Workshop on AWS" id="evname" required/>
 
             <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Description</div>
-            <Inputt onChange={(e) => onValueChange(e)} name='desc' id="desc"/>
+            <Inputt onChange={(e) => onValueChange(e)} name='description' id="desc"/>
 
             <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Preferred Skills</div>
-            <Inputt onChange={(e) => onValueChange(e)} name='skill' placeholder="Frontend, DevOps, etc" id="pre-skills" required/>
+            <Inputt onChange={(e) => onValueChange(e)} name='skills' placeholder="Frontend, DevOps, etc" id="pre-skills" required/>
 
             <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Prefered Time Slot</div>
             <div style={{display:"flex",alignItems:"center"}}>
