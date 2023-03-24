@@ -19,9 +19,6 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <NavLink to="/alumni">Alumni</NavLink>
-        <NavLink to="/teacher">Teacher</NavLink>
-        <NavLink to="/admin">Admin</NavLink>
         <Routes>
           <Route path='/LoaEmail' element={<LetterOfAppreciation/>}/>
           <Route path='/' element={<Login/>}/>

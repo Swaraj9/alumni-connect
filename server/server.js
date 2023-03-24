@@ -2,6 +2,7 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose')
+const nodemailer = require("nodemailer");
 
 //Create Server
 const port = 5000;
@@ -21,7 +22,38 @@ try{
 mongoose.connection.on('connected', () => console.log("Database successfully connected"));
 
 const userRouter = require('./routes/User');
+const eventRouter = require('./routes/Event');
 app.use('/user', userRouter);
+app.use('/event', eventRouter);
+
+//Auto Email
+app.post("/api/sendLetterOfAppreciation", async (req, res) => {
+    try {
+        const { email, message } = req.body;
+
+        const transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+            user: "swaraj.dusane@somaiya.edu", // replace with your email
+            pass: "swaraj90", // replace with your password
+        },
+        });
+
+        const mailOptions = {
+        from: "swaraj.dusane@somaiya.edu", // replace with your email
+        to: email,
+        subject: "Letter of Appreciation",
+        text: message,
+        };
+
+        await transporter.sendMail(mailOptions);
+
+        res.send("Letter of Appreciation sent!");
+    } catch (error) {
+        console.log(error);
+        res.status(500).send("Error sending Letter of Appreciation.");
+    }
+    });
 
 //Start Server
 app.listen(port, () => {
