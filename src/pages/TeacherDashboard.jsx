@@ -65,7 +65,8 @@ const TeacherDashboard = () => {
           display: "flex",
           height: "10%",
           width: "100%",
-          margin:30
+          margin:30,
+          alignItems: "center",
         }}
       >
         <div style={{ width: "10%" }}><img src={somaiya} alt="Somaiya Logo" style={{ width: 250,marginLeft:-15 }}/></div>
@@ -82,7 +83,9 @@ const TeacherDashboard = () => {
           <NavLink to='' style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>Create Event</NavLink>
           <NavLink to='responses'style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>View Responses</NavLink>
           <NavLink to='loaupload' style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>Upload LOA</NavLink>
-          
+          <NavLink to='ongoing' style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>Events</NavLink>
+          <NavLink to='eventend' style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>Event End</NavLink>
+          </div>
           <div
             style={{
               position: "relative",
@@ -91,14 +94,14 @@ const TeacherDashboard = () => {
           >
             <button
                   style={{
-                      minWidth: "120px",
+                      minWidth: "90px",
                       border: "none",
                       backgroundColor: "var(--primary)",
                       padding: "0.5rem",
                       color: "var(--white)",
                       borderRadius: "5px",
                       fontSize: "1rem",
-                      marginLeft:'1rem',
+                      marginLeft:'-12rem',
 
                   }}
                   onClick={onClickLogoutHandler}
@@ -108,7 +111,7 @@ const TeacherDashboard = () => {
           </div>
           
 
-        </div>
+        
       </div>
 
       <div

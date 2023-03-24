@@ -8,10 +8,13 @@ const Card = ({ children }) => {
   return (
     <div
       style={{
+        display:"flex",
+        alignItems:"center",
         backgroundColor: "#cccccc",
         padding: "1rem",
         borderRadius: "10px",
         marginBottom: "1.5rem",
+        paddingBottom:"2rem"
       }}
     >
       {children}
@@ -69,8 +72,8 @@ const AlumniDashboard = () => {
             fontSize:18
           }}>
           <div style={{width: 75}}></div>
-          <div>Past Events</div>
-          <div>Check Rating</div>
+          {/* <div>Past Events</div>
+          <div>Check Rating</div> */}
 
           <div
             style={{
@@ -87,7 +90,7 @@ const AlumniDashboard = () => {
                       color: "var(--white)",
                       borderRadius: "5px",
                       fontSize: "1rem",
-                      marginLeft:'1rem',
+                      marginLeft:'15rem',
 
                   }}
                   onClick={onClickLogoutHandler}
@@ -115,6 +118,7 @@ const AlumniDashboard = () => {
             padding: "2rem",
             paddingTop:"0.5rem",
             borderRadius: "10px",
+            marginLeft: "6rem" 
           }}
         >
             <div style={{ marginBottom: "1.5rem", fontSize:'2.5rem', color:'#A02929', alignSelf:'flex-start', marginTop:"1.5rem" }}>
@@ -124,8 +128,8 @@ const AlumniDashboard = () => {
                 Ongoing Events
             </div>
 
-          <EventCard>
-            <div style={{ flex: 1, height:'200px', width:'200px', backgroundColor: 'var(--white)', borderRadius:'5px', marginRight:'2rem' }}/>
+            <Card>
+            <div style={{  height:'100px', width:'100px', backgroundColor: 'var(--white)', borderRadius:'50rem', marginRight:'2rem', }}/>
             <div style={{ flex: 3 ,marginTop:"0.8rem", fontSize:20}}>
               <div>EventName</div>
               <div><p >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum deleniti non corporis eveniet laudantium modi distinctio iure quis praesentium natus aperiam exercitationem consequatur eaque provident eos, doloremque facere eligendi vel?</p></div>
@@ -146,10 +150,10 @@ const AlumniDashboard = () => {
             </button>
               </div>
             </div>
-          </EventCard>
+          </Card>
 
-          <EventCard>
-            <div style={{ flex: 1, height:'200px', width:'200px', backgroundColor: 'var(--white)', borderRadius:'5px', marginRight:'2rem' }}/>
+          <Card>
+            <div style={{  height:'100px', width:'100px', backgroundColor: 'var(--white)', borderRadius:'50rem', marginRight:'2rem', }}/>
             <div style={{ flex: 3 ,marginTop:"0.8rem", fontSize:20}}>
               <div>EventName</div>
               <div><p >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum deleniti non corporis eveniet laudantium modi distinctio iure quis praesentium natus aperiam exercitationem consequatur eaque provident eos, doloremque facere eligendi vel?</p></div>
@@ -170,10 +174,10 @@ const AlumniDashboard = () => {
             </button>
               </div>
             </div>
-          </EventCard>
+          </Card>
 
-          <EventCard>
-            <div style={{ flex: 1, height:'200px', width:'200px', backgroundColor: 'var(--white)', borderRadius:'5px', marginRight:'2rem' }}/>
+          <Card>
+            <div style={{  height:'100px', width:'100px', backgroundColor: 'var(--white)', borderRadius:'50rem', marginRight:'2rem', }}/>
             <div style={{ flex: 3 ,marginTop:"0.8rem", fontSize:20}}>
               <div>EventName</div>
               <div><p >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum deleniti non corporis eveniet laudantium modi distinctio iure quis praesentium natus aperiam exercitationem consequatur eaque provident eos, doloremque facere eligendi vel?</p></div>
@@ -194,7 +198,7 @@ const AlumniDashboard = () => {
             </button>
               </div>
             </div>
-          </EventCard>
+          </Card>
 
           {/* <div>
             <button

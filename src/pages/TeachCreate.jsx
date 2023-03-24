@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import Input from "../components/Input";
 import { RxUpload } from 'react-icons/rx';
 import somaiya from "../img/kjsieit-logo.svg"
@@ -23,6 +24,18 @@ const Inputt = (props) => {
 
 
 const TeachCreate = () => {
+  const defaultValues = {
+    name: '',
+    desc: '',
+    skill: '',
+  }
+  const [eve,setUser]=useState(defaultValues);
+  const onValueChange = (e) =>{
+    setUser({...eve,[e.target.name]: e.target.value})
+}
+  const addEventDetails = () => {
+
+  }
   return (
     <div
           style={{
@@ -30,17 +43,14 @@ const TeachCreate = () => {
             backgroundColor: "white",
             padding: "2rem",
             borderRadius: "10px",
+            marginLeft: "6rem" 
           }}
         >
             <div style={{ marginBottom: "1.5rem", fontSize:'2.5rem', color:'#A02929', alignSelf:'flex-start' }}>
                 <b>Teacher Dashboard</b>
             </div>
             <div style={{ marginBottom: "1.5rem", fontSize:'1.5rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>
-                Create Event
-            </div>
-
-            <div style={{height: 500, backgroundColor:"slateblue",margin:30}}>
-                
+                Proposed Event
             </div>
 
           {/* <div>
@@ -68,7 +78,7 @@ const TeachCreate = () => {
 
 
             <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Event Type</div>
-            <select name="Event Type" id="evntype" style={{
+            <select  name="Event Type" id="evntype" style={{
                     borderRadius:5,
                     width:"17rem",
                     height:"2.0rem",
@@ -82,13 +92,13 @@ const TeachCreate = () => {
             </select>
 
             <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Event Name</div>
-            <Inputt placeholder="Workshop on AWS" id="evname" required/>
+            <Inputt onChange={(e) => onValueChange(e)} name='name' placeholder="Workshop on AWS" id="evname" required/>
 
             <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Description</div>
-            <Inputt id="desc"/>
+            <Inputt onChange={(e) => onValueChange(e)} name='desc' id="desc"/>
 
             <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Preferred Skills</div>
-            <Inputt placeholder="Frontend, DevOps, etc" id="pre-skills" required/>
+            <Inputt onChange={(e) => onValueChange(e)} name='skill' placeholder="Frontend, DevOps, etc" id="pre-skills" required/>
 
             <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Prefered Time Slot</div>
             <div style={{display:"flex",alignItems:"center"}}>
@@ -113,7 +123,7 @@ const TeachCreate = () => {
             }} />
             </div>
             <div style={{display:'flex', marginTop:'2rem'}}> 
-            <button
+            <button onClick={() => addEventDetails()}
                 style={{
                     minWidth: "200px",
                     border: "none",
@@ -127,7 +137,7 @@ const TeachCreate = () => {
                 >
                 Submit
             </button>
-            <button
+            {/* <button
                 style={{
                     minWidth: "200px",
                     border: "none",
@@ -140,7 +150,7 @@ const TeachCreate = () => {
                 }}
                 >
                 Reset
-            </button>
+            </button> */}
 
         </div>
                 
