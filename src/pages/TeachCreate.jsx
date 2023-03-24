@@ -26,15 +26,37 @@ const Inputt = (props) => {
 const TeachCreate = () => {
   const defaultValues = {
     name: '',
-    desc: '',
-    skill: '',
+    description: '',
+    skills: '',
   }
   const [eve,setUser]=useState(defaultValues);
+  const [evetype,setType]=useState("");
+  const [frdate,setFromDate]=useState();
+  const [todate,setToDate]=useState();
+
   const onValueChange = (e) =>{
     setUser({...eve,[e.target.name]: e.target.value})
+    console.log(eve);
+    console.log(frdate);
+    console.log(todate);
 }
   const addEventDetails = () => {
-
+    const eventdet ={
+      name:eve.name,
+      description:eve.description,
+      skills:eve.skills,
+      from:frdate,
+      to:todate,
+      type:evetype
+    }
+    fetch('/event/create', {
+      method: "post",
+      body: JSON.stringify(eventdet),
+      headers : {
+          'Content-Type': 'application/json'
+      }
+  }).then(res => res.json())
+    .then(data => data);
   }
   return (
     <div
@@ -78,17 +100,17 @@ const TeachCreate = () => {
 
 
             <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Event Type</div>
-            <select  name="Event Type" id="evntype" style={{
+            <select onChange={(e) => setType(e.target.value)} name="type" style={{
                     borderRadius:5,
                     width:"17rem",
                     height:"2.0rem",
                     color:"gray"
                 }}>
                     <option value="select">Select Event Type</option>
-                    <option value="intern">Internship</option>
-                    <option value="works">Workshop</option>
-                    <option value="semi">Seminar</option>
-                    <option value="mentor">Mentorship</option>
+                    <option value="internship">Internship</option>
+                    <option value="workshop">Workshop</option>
+                    <option value="seminar">Seminar</option>
+                    <option value="mentorship">Mentorship</option>
             </select>
 
             <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Event Name</div>
@@ -102,7 +124,7 @@ const TeachCreate = () => {
 
             <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Prefered Time Slot</div>
             <div style={{display:"flex",alignItems:"center"}}>
-            <Inputt type="date" style={{
+            <Inputt onChange={(e) => setFromDate(e.target.value)} name='from' type="date" style={{
                 width: "17rem",
                 minWidth: "200px",
                 padding: "0.5rem",
@@ -112,7 +134,7 @@ const TeachCreate = () => {
                 marginRight:"1rem",
             }} />
             <div>to</div>
-            <Inputt type="date" style={{
+            <Inputt onChange={(e) => setToDate(e.target.value)} name='to' type="date" style={{
                 width: "17rem",
                 minWidth: "200px",
                 padding: "0.5rem",
