@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Input from "../components/Input";
 import { AuthContext } from "../context/AuthContext";
 import somaiya from "../img/kjsieit-logo.svg"
@@ -41,7 +41,8 @@ const EventCard = ({ children }) => {
 const AlumniDashboard = () => {
 
   const {setUser, setIsAuthenticated} = useContext(AuthContext);
-
+  const [events, setEvents] = useState([]);
+ 
   const onClickLogoutHandler = () => {
     AuthServices.logout().then(data => {
       if(data.success){
@@ -50,6 +51,18 @@ const AlumniDashboard = () => {
       }
     })
   }
+
+  useEffect(()=>{
+    fetch('/event/get', {
+      method: "GET",
+    })
+    .then(res => res.json())
+    .then(_events => {
+      console.log(_events);
+      setEvents(_events);
+    })
+    .catch(err => console.log(err));
+  },[])
 
   return (
     <div>
@@ -128,77 +141,32 @@ const AlumniDashboard = () => {
                 Ongoing Events
             </div>
 
+            {events && 
+            events.map(event => 
             <Card>
-            <div style={{  height:'100px', width:'100px', backgroundColor: 'var(--white)', borderRadius:'50rem', marginRight:'2rem', }}/>
-            <div style={{ flex: 3 ,marginTop:"0.8rem", fontSize:20}}>
-              <div>EventName</div>
-              <div><p >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum deleniti non corporis eveniet laudantium modi distinctio iure quis praesentium natus aperiam exercitationem consequatur eaque provident eos, doloremque facere eligendi vel?</p></div>
-              <div>
-              <button
-                style={{
-                    minWidth: "200px",
-                    border: "none",
-                    backgroundColor: "var(--primary)",
-                    padding: "0.5rem",
-                    color: "var(--white)",
-                    borderRadius: "5px",
-                    fontSize: "1rem",
-                    marginRight:'1rem'
-                }}
-                >
-                I'm Interested
-            </button>
+              <div style={{  height:'100px', width:'100px', backgroundColor: 'var(--white)', borderRadius:'50rem', marginRight:'2rem', }}/>
+              <div style={{ flex: 3 ,marginTop:"0.8rem", fontSize:20}}>
+                <div>{event.name}</div>
+                <div><p >{event.description}</p></div>
+                <div>
+                <button
+                  style={{
+                      minWidth: "200px",
+                      border: "none",
+                      backgroundColor: "var(--primary)",
+                      padding: "0.5rem",
+                      color: "var(--white)",
+                      borderRadius: "5px",
+                      fontSize: "1rem",
+                      marginRight:'1rem'
+                  }}
+                  >
+                  I'm Interested
+              </button>
+                </div>
               </div>
-            </div>
-          </Card>
-
-          <Card>
-            <div style={{  height:'100px', width:'100px', backgroundColor: 'var(--white)', borderRadius:'50rem', marginRight:'2rem', }}/>
-            <div style={{ flex: 3 ,marginTop:"0.8rem", fontSize:20}}>
-              <div>EventName</div>
-              <div><p >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum deleniti non corporis eveniet laudantium modi distinctio iure quis praesentium natus aperiam exercitationem consequatur eaque provident eos, doloremque facere eligendi vel?</p></div>
-              <div>
-              <button
-                style={{
-                    minWidth: "200px",
-                    border: "none",
-                    backgroundColor: "var(--primary)",
-                    padding: "0.5rem",
-                    color: "var(--white)",
-                    borderRadius: "5px",
-                    fontSize: "1rem",
-                    marginRight:'1rem'
-                }}
-                >
-                I'm Interested
-            </button>
-              </div>
-            </div>
-          </Card>
-
-          <Card>
-            <div style={{  height:'100px', width:'100px', backgroundColor: 'var(--white)', borderRadius:'50rem', marginRight:'2rem', }}/>
-            <div style={{ flex: 3 ,marginTop:"0.8rem", fontSize:20}}>
-              <div>EventName</div>
-              <div><p >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum deleniti non corporis eveniet laudantium modi distinctio iure quis praesentium natus aperiam exercitationem consequatur eaque provident eos, doloremque facere eligendi vel?</p></div>
-              <div>
-              <button
-                style={{
-                    minWidth: "200px",
-                    border: "none",
-                    backgroundColor: "var(--primary)",
-                    padding: "0.5rem",
-                    color: "var(--white)",
-                    borderRadius: "5px",
-                    fontSize: "1rem",
-                    marginRight:'1rem'
-                }}
-                >
-                I'm Interested
-            </button>
-              </div>
-            </div>
-          </Card>
+            </Card>
+            )}
 
           {/* <div>
             <button
