@@ -14,6 +14,7 @@ import PrivateRoute from './PrivateRoute';
 import LetterOfAppreciation from "./pages/LoaEmail";
 import OngoingTeach from './pages/OngoingTeach';
 import EventEnd from './pages/EventEnd';
+import LoaEmail from './pages/LoaEmail';
 
 function App() {
   return (
@@ -27,9 +28,10 @@ function App() {
           <Route path="/teacher" element={<PrivateRoute roles = {['teacher']}><TeacherDashboard/></PrivateRoute>}>
             <Route path='' element={<TeachCreate />} />
             <Route path='responses' element={<Responses />} />
-            <Route path='loaupload' element={<UploadLOA />} />
+            {/* <Route path='loaupload' element={<UploadLOA />} /> */}
             <Route path='ongoing' element={<OngoingTeach />} />
             <Route path='eventend' element={<EventEnd />} />
+            <Route path='loaemail' element={<LoaEmail />} />
           </Route>
           <Route path="/admin" element={<PrivateRoute roles = {['admin']}><AdminDashboard/></PrivateRoute>}/>
         </Routes>

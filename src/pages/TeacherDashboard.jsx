@@ -82,9 +82,10 @@ const TeacherDashboard = () => {
           <div style={{width: 75}}></div>
           <NavLink to='' style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>Create Event</NavLink>
           <NavLink to='responses'style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>View Responses</NavLink>
-          <NavLink to='loaupload' style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>Upload LOA</NavLink>
+          {/* <NavLink to='loaupload' style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>Upload LOA</NavLink> */}
           <NavLink to='ongoing' style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>Events</NavLink>
           <NavLink to='eventend' style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>Event End</NavLink>
+          <NavLink to='loaemail' style={{color:"#A02929",fontWeight:"400",textDecoration:"none",fontSize:21}}>Email LOA</NavLink>
           </div>
           <div
             style={{

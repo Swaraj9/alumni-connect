@@ -148,6 +148,16 @@ const UploadLOA = () => {
                 Reset
             </button>
 
+            {/* <form onSubmit={handleSubmit}>
+            <label htmlFor="email">Email:</label>
+            <input type="email" id="email" name="email" onChange={handleEmailChange} />
+
+            <label htmlFor="message">Message:</label>
+            <textarea id="message" name="message" onChange={handleMessageChange} />
+
+            <button type="submit" onClick={handleSubmit}>Send Letter of Appreciation</button>
+          </form> */}
+
         </div>
           </div>
         </div>
