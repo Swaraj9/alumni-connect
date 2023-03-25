@@ -13,4 +13,14 @@ eventRouter.post('/create', (req, res) => {
             });
 });
 
+eventRouter.get('/get', (req, res) => {
+    Event.find({})
+         .then(events => {
+            res.status(201).json(events);
+         })
+         .catch(err => {
+            res.status(500).json({message:"An error occured while fetching events"})
+         })
+})
+
 module.exports = eventRouter;
