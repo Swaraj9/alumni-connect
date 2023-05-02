@@ -40,9 +40,9 @@ const EventCard = ({ children }) => {
 
 const AlumniDashboard = () => {
 
-  const {setUser, setIsAuthenticated} = useContext(AuthContext);
+  const {user, setUser, setIsAuthenticated} = useContext(AuthContext);
   const [events, setEvents] = useState([]);
- 
+
   const onClickLogoutHandler = () => {
     AuthServices.logout().then(data => {
       if(data.success){
@@ -63,7 +63,58 @@ const AlumniDashboard = () => {
     })
     .catch(err => console.log(err));
   },[])
+  const defaultValues = {
+    name: '',
+    description: '',
+    skills: '',
+  }
+  const [eve,setEvent]=useState(defaultValues);
+  const [evename,setName]=useState("");
+  const [evetype,setType]=useState("");
+  const [frdate,setFromDate]=useState();
+  const [todate,setToDate]=useState();
 
+  const onValueChange = (e) =>{
+    setEvent({...eve,[e.target.name]: e.target.value})
+    console.log(eve);
+  }
+
+
+  const addEventDetails = () => {
+    const eventdet ={
+      type:evetype,
+      name:eve.name,
+      description:eve.description,
+      skills:eve.skills,
+      from:frdate,
+      to:todate,
+    }
+    fetch('/suggestevent/create', {
+      method: "post",
+      body: JSON.stringify(eventdet),
+      headers : {
+          'Content-Type': 'application/json'
+      }
+  }).then(res => res.json())
+    .then(data => data);
+  }
+
+  const addResponseDetails = () => {
+    const resdet ={
+      name:user.username,
+      email:user.email,
+      evename:evename
+    }
+    console.log(resdet);
+    fetch('/responseevent/create', {
+      method: "post",
+      body: JSON.stringify(resdet),
+      headers : {
+          'Content-Type': 'application/json'
+      }
+  }).then(res => res.json())
+    .then(data => data);
+  }
   return (
     <div>
       <div
@@ -149,7 +200,9 @@ const AlumniDashboard = () => {
                 <div>{event.name}</div>
                 <div><p >{event.description}</p></div>
                 <div>
-                <button
+                <button onClick={() => {
+                setName(event.name)
+                addResponseDetails()}}
                   style={{
                       minWidth: "200px",
                       border: "none",
@@ -190,30 +243,58 @@ const AlumniDashboard = () => {
             <div style={{ marginBottom: "1.0rem", fontSize:'1.5rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>
                 Suggest Events
             </div>
-            <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Event Name</div>
-            <Input placeholder="Event Name" />
-            <form action="#">
-                <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Event Type</div>
-                <select name="Event Type" id="etype" style={{
-                    
+            
+
+          {/* <div>
+            <button
+              title="View More"
+              style={{
+                backgroundColor: "grey",
+                width: "70%",
+                border: 0,
+                padding:1.5
+              }}
+            /> */}
+          {/* </div> */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "stretch",
+              flexDirection: "column",
+              width: "100%",
+            }}
+          >
+            {/* <div style={{ marginBottom: "1.5rem", fontSize:'1.5rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>
+                Leaderboard
+            </div> */}
+
+
+            <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Event Type</div>
+            <select onChange={(e) => setType(e.target.value)} name="type" style={{
                     borderRadius:5,
                     width:"17rem",
                     height:"2.0rem",
                     color:"gray"
                 }}>
                     <option value="select">Select Event Type</option>
-                    <option value="intern">Internship</option>
-                    <option value="works">Workshop</option>
-                    <option value="semi">Seminar</option>
-                    <option value="mentor">Mentorship</option>
-                </select>
-            </form>
+                    <option value="internship">Internship</option>
+                    <option value="workshop">Workshop</option>
+                    <option value="seminar">Seminar</option>
+                    <option value="mentorship">Mentorship</option>
+            </select>
+
+            <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Event Name</div>
+            <Input onChange={(e) => onValueChange(e)} name='name' placeholder="Workshop on AWS" id="evname" required/>
+
             <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Description</div>
-            <Input placeholder="Enter Details" />
-            
+            <Input onChange={(e) => onValueChange(e)} name='description' id="desc"/>
+
+            <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Preferred Skills</div>
+            <Input onChange={(e) => onValueChange(e)} name='skills' placeholder="Frontend, DevOps, etc" id="pre-skills" required/>
+
             <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Prefered Time Slot</div>
             <div style={{display:"flex",alignItems:"center"}}>
-            <Input type="date" style={{
+            <Input onChange={(e) => setFromDate(e.target.value)} name='from' type="date" style={{
                 width: "17rem",
                 minWidth: "200px",
                 padding: "0.5rem",
@@ -223,7 +304,7 @@ const AlumniDashboard = () => {
                 marginRight:"1rem",
             }} />
             <div>to</div>
-            <Input type="date" style={{
+            <Input onChange={(e) => setToDate(e.target.value)} name='to' type="date" style={{
                 width: "17rem",
                 minWidth: "200px",
                 padding: "0.5rem",
@@ -233,9 +314,8 @@ const AlumniDashboard = () => {
                 marginLeft:"1rem",
             }} />
             </div>
-
             <div style={{display:'flex', marginTop:'2rem'}}> 
-            <button
+            <button onClick={() => addEventDetails()}
                 style={{
                     minWidth: "200px",
                     border: "none",
@@ -249,7 +329,8 @@ const AlumniDashboard = () => {
                 >
                 Submit
             </button>
-            <button
+            </div>
+            {/* <button
                 style={{
                     minWidth: "200px",
                     border: "none",
@@ -262,7 +343,7 @@ const AlumniDashboard = () => {
                 }}
                 >
                 Reset
-            </button>
+            </button> */}
 
         </div>
           </div>

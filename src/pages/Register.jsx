@@ -36,6 +36,7 @@ const Register = () => {
   const navigate = useNavigate();
 
   const [username, setUsername] = useState(null);
+  const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
   const [role, setRole] = useState(null);
   const [message, setMessage] = useState(null);
@@ -59,7 +60,7 @@ const Register = () => {
       setMessage({msgBody: "Enter username, password and role"});
       return;
     }
-    AuthServices.register({username, password, role}).then(data=> {
+    AuthServices.register({username, email, password, role}).then(data=> {
       const {message} = data;
       setMessage(message);
       resetForm();
@@ -279,7 +280,7 @@ const Register = () => {
           marginTop:"1.5rem" }}>
             Email ID
         </div>
-        <Input placeholder="Please Enter Personal Email ID"/>
+        <Input placeholder="Please Enter Personal Email ID" value={email} onChange={e => setEmail(e.target.value)}/>
 
         <div style={{ 
           marginBottom: "1.0rem", 

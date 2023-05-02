@@ -23,8 +23,15 @@ mongoose.connection.on('connected', () => console.log("Database successfully con
 
 const userRouter = require('./routes/User');
 const eventRouter = require('./routes/Event');
+const responseRouter = require('./routes/Response');
+const pasteventRouter = require('./routes/PastEvent');
+const suggesteventRouter = require('./routes/SuggestEvents');
+
 app.use('/user', userRouter);
 app.use('/event', eventRouter);
+app.use('/suggestevent', suggesteventRouter);
+app.use('/pastevent', pasteventRouter);
+app.use('/responseevent', responseRouter);
 
 //Auto Email
 app.post("/api/sendLetterOfAppreciation", async (req, res) => {

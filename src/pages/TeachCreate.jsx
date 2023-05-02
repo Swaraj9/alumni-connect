@@ -29,15 +29,17 @@ const TeachCreate = () => {
     description: '',
     skills: '',
   }
-  const [eve,setUser]=useState(defaultValues);
+  const [eve,setEvent]=useState(defaultValues);
   const [evetype,setType]=useState("");
   const [frdate,setFromDate]=useState();
   const [todate,setToDate]=useState();
 
   const onValueChange = (e) =>{
-    setUser({...eve,[e.target.name]: e.target.value})
-}
-  const addEventDetails = () => {
+    setEvent({...eve,[e.target.name]: e.target.value})
+    console.log(eve);
+  }
+
+  const addEventDetails = async() => {
     const eventdet ={
       name:eve.name,
       description:eve.description,
@@ -52,9 +54,11 @@ const TeachCreate = () => {
       headers : {
           'Content-Type': 'application/json'
       }
-  }).then(res => res.json())
+    })
+    .then(res => res.json())
     .then(data => data);
   }
+  
   return (
     <div
           style={{

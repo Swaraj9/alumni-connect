@@ -74,7 +74,11 @@ const OngoingTeach = () => {
                 <div>{event.name}</div>
                 <div><p >{event.description}</p></div>
                 <div>
-                <button
+                <div>{event.from}</div>
+                <div>{event.to}</div>
+                </div>
+                <div>
+                {/* <button
                   style={{
                       minWidth: "200px",
                       border: "none",
@@ -87,7 +91,7 @@ const OngoingTeach = () => {
                   }}
                   >
                   I'm Interested
-              </button>
+              </button> */}
                 </div>
               </div>
             </Card>
