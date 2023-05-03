@@ -2,6 +2,9 @@ import React, { useContext, useEffect, useState } from "react";
 import {AuthContext} from "../context/AuthContext";
 import somaiya from "../img/kjsieit-logo.svg"
 import AuthServices from "../services/AuthService";
+import { BsFillHouseGearFill,BsPersonWorkspace } from 'react-icons/bs';
+import { GrWorkshop } from 'react-icons/gr';
+import { VscPerson } from 'react-icons/vsc';
 import Input from "../components/Input";
 
 const Inputt = (props) => {
@@ -25,9 +28,9 @@ const Card = ({ children }) => {
   return (
     <div
       style={{
-        backgroundColor: "#cccccc",
+        backgroundColor: "#EBF5EE",
         padding: "1rem",
-        borderRadius: "10px",
+        borderRadius: "1.2rem",
         marginBottom: "1.5rem",
         display:"flex",
         alignItems:"center"
@@ -127,6 +130,24 @@ const AdminDashboard = () => {
     })
   }
 
+  const setIcon = (type) => {
+    if(type==="internship")
+    {
+      return <BsPersonWorkspace style={{width:100,height:100,color:"#3C4048"}} />
+    }
+    else if(type==="workshop")
+    {
+      return <BsFillHouseGearFill style={{width:100,height:100,color:"#3C4048"}} />
+    }
+    else if(type==="seminar")
+    {
+      return <GrWorkshop style={{width:100,height:100,color:"#3C4048"}} />
+    }
+    else
+    {
+      return <VscPerson style={{width:100,height:100,color:"#3C4048"}} />
+    }
+}
   return (
     <div>
       <div
@@ -199,7 +220,7 @@ const AdminDashboard = () => {
             <div style={{ marginBottom: "1.5rem", fontSize:'2.5rem', color:'#A02929', alignSelf:'flex-start', marginTop:"1.5rem" }}>
                 <b>Admin Dashboard</b>
             </div>
-            <div style={{ marginBottom: "1.5rem", fontSize:'1.5rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>
+            <div style={{ marginBottom: "1.5rem", fontSize:'1.8rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>
                 Suggest Event
             </div>
 
@@ -227,7 +248,7 @@ const AdminDashboard = () => {
             </div> */}
 
 
-            <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Event Type</div>
+            <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"0.5rem" }}>Event Type</div>
             <select onChange={(e) => setType(e.target.value)} name="type" style={{
                     borderRadius:5,
                     width:"17rem",
@@ -289,23 +310,25 @@ const AdminDashboard = () => {
             </button>
             </div>
     </div>
-            <div style={{ marginBottom: "1.5rem", fontSize:'1.5rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>
+            <div style={{ marginBottom: "1.5rem", fontSize:'1.8rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>
                 Past Events
             </div>
 
             {pastevents && 
             pastevents.map(pastevent => 
             <Card>
-              <div style={{  height:'100px', width:'100px', backgroundColor: 'var(--white)', borderRadius:'50rem', marginRight:'2rem', }}/>
-              <div style={{ flex: 3 ,marginTop:"0.8rem", fontSize:20}}>
-                <div>{pastevent.name}</div>
-                <div><p >{pastevent.description}</p></div>
-                <div>
+              <div style={{  height:'8rem', width:'8rem', backgroundColor: 'var(--white)', borderRadius:'8rem', marginRight:'2rem',display:"flex",justifyContent:"center",alignItems:"center" }}>{setIcon(pastevent.type)}</div>
+              <div style={{ flex: 3 ,marginTop:"0.2rem", fontSize:20}}>
+              <div style={{fontWeight:500,fontSize:"1.4rem"}}>{pastevent.name}</div>
+              <div><p >About Event: {pastevent.description}</p></div>
+              <div style={{display:"flex"}}>
                 <div>{(new Date(pastevent.from)).getFullYear()+"-"+((new Date(pastevent.from)).getMonth()+1)+"-"+(new Date(pastevent.from)).getDate()}</div>
+                <div style={{marginLeft:"1rem",marginRight:"1rem"}}>to</div>
                 <div>{(new Date(pastevent.to)).getFullYear()+"-"+((new Date(pastevent.to)).getMonth()+1)+"-"+(new Date(pastevent.to)).getDate()}</div>
+                </div>
                 <div>Hosted By : {pastevent.alumname}</div>
                 <a href={pastevent.link}>Drive Link for Event Images</a>
-                </div>
+                
                 <div>
                 {/* <button
                   style={{
@@ -471,7 +494,7 @@ const AdminDashboard = () => {
               
             </Card> */}
 
-            <div>Testing</div>
+            {/* <div>Testing</div>
             {events && 
             events.map(event => 
             <Card>
@@ -484,24 +507,11 @@ const AdminDashboard = () => {
                 <div>{event.to}</div>
                 </div>
                 <div>
-                {/* <button
-                  style={{
-                      minWidth: "200px",
-                      border: "none",
-                      backgroundColor: "var(--primary)",
-                      padding: "0.5rem",
-                      color: "var(--white)",
-                      borderRadius: "5px",
-                      fontSize: "1rem",
-                      marginRight:'1rem'
-                  }}
-                  >
-                  I'm Interested
-              </button> */}
+                
                 </div>
               </div>
             </Card>
-            )}
+            )} */}
         </div></div>
       </div>
     </div>

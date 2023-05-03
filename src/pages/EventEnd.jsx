@@ -211,7 +211,7 @@ const EventEnd = () => {
                 Reset
             </button> */}
             </div>
-            <div>Past Events testing</div>
+            {/* <div>Past Events testing</div>
         {pastevents && 
             pastevents.map(pastevent => 
             <Card>
@@ -226,24 +226,11 @@ const EventEnd = () => {
                 <div>{pastevent.link}</div>
                 </div>
                 <div>
-                {/* <button
-                  style={{
-                      minWidth: "200px",
-                      border: "none",
-                      backgroundColor: "var(--primary)",
-                      padding: "0.5rem",
-                      color: "var(--white)",
-                      borderRadius: "5px",
-                      fontSize: "1rem",
-                      marginRight:'1rem'
-                  }}
-                  >
-                  I'm Interested
-              </button> */}
+                
                 </div>
               </div>
             </Card>
-            )}
+            )} */}
         
           </div>
         </div>
