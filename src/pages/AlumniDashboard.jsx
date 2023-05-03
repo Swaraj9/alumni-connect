@@ -224,8 +224,42 @@ const AlumniDashboard = () => {
             <div style={{ marginBottom: "1.5rem", fontSize:'1.5rem', color:'var(--primary)', alignSelf:'flex-start'  }}>
                 Ongoing Events
             </div>
-
             {events && 
+            events.map(event => 
+            <Card>
+              <div style={{  height:'8rem', width:'8rem', backgroundColor: 'var(--white)', borderRadius:'8rem', marginRight:'2rem',display:"flex",justifyContent:"center",alignItems:"center" }}>{setIcon(event.type)}</div>
+              <div style={{ flex: 3 ,marginTop:"0.8rem", fontSize:20}}>
+              <div style={{fontWeight:500,fontSize:"1.4rem"}}>{event.name}</div>
+              <div><p >About Event: {event.description}</p></div>
+              <div style={{display:"flex"}}>
+                <div>{(new Date(event.from)).getFullYear()+"-"+((new Date(event.from)).getMonth()+1)+"-"+(new Date(event.from)).getDate()}</div>
+                <div style={{marginLeft:"1rem",marginRight:"1rem"}}>to</div>
+                <div>{(new Date(event.to)).getFullYear()+"-"+((new Date(event.to)).getMonth()+1)+"-"+(new Date(event.to)).getDate()}</div>
+                </div>
+                <div>
+                <button onClick={() => {
+                setName(event.name)
+                addResponseDetails()}}
+                  style={{
+                      minWidth: "200px",
+                      border: "none",
+                      backgroundColor: "var(--primary)",
+                      padding: "0.5rem",
+                      color: "var(--white)",
+                      borderRadius: "5px",
+                      fontSize: "1rem",
+                      marginRight:'1rem',
+                      marginTop: '1rem'
+                  }}
+                  >
+                  I'm Interested
+              </button>
+                </div>
+              </div>
+            </Card>
+            )}
+
+            {/* {events && 
             events.map(event => 
             <Card>
               <div style={{  height:'100px', width:'100px', backgroundColor: 'var(--white)', borderRadius:'50rem', marginRight:'2rem', }}/>
@@ -252,7 +286,7 @@ const AlumniDashboard = () => {
                 </div>
               </div>
             </Card>
-            )}
+            )} */}
 
           {/* <div>
             <button
