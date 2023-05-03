@@ -20,6 +20,7 @@ const Card = ({ children }) => {
 
 const EventEnd = () => {
   const [events, setEvents] = useState([]);
+
   useEffect(()=>{
     fetch('/event/get', {
       method: "GET",
@@ -61,7 +62,17 @@ const EventEnd = () => {
     console.log(eve);
   }
 
-  const addEventDetails = async() => {
+  const addEventDetails = async(name) => {
+
+    await fetch('/event/delete', {
+      method: "POST",
+      body: JSON.stringify({name}),
+      headers : {
+        'Content-Type': 'application/json'
+      } 
+    })
+    .catch(err => console.log(err));
+
     const eventdet ={
       type:evetype,
       name:evename,
@@ -182,7 +193,7 @@ const EventEnd = () => {
             </div>
             
             <div style={{display:'flex', marginTop:'2rem'}}> 
-            <button onClick={() => addEventDetails()}
+            <button onClick={() => addEventDetails(evename)}
                 style={{
                     minWidth: "200px",
                     border: "none",

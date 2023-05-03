@@ -57,6 +57,24 @@ const TeachCreate = () => {
     })
     .then(res => res.json())
     .then(data => data);
+
+    fetch('/user/getAlumni', {
+      method: "GET",
+    })
+    .then(res => res.json())
+    .then(alumnis => {
+      alumnis.forEach(alumni => {
+        if(alumni.email){
+          fetch("/api/sendLetterOfAppreciation", {
+            method: "POST",
+            body: JSON.stringify({email:alumni.email, message: `An event ${eve.name} of type ${evetype} has been created.`, subject: "New Event Created"}),
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          })
+        }
+      })
+    });
   }
   
   return (

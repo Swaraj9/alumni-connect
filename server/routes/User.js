@@ -62,5 +62,11 @@ userRouter.get('/authenticated', passport.authenticate('jwt', {session: false}),
     res.status(200).json({isAuthenticated: true, user: {username, email, role}});
 });
 
+userRouter.get('/getAlumni', (req, res) => {
+    User.find({role: "alumni"})
+        .then(docs => res.status(201).json(docs))
+        .catch(err => res.status(500).json({message: "Error occured while fetching"}));
+})
+
 module.exports = userRouter;
 

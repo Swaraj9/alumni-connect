@@ -119,12 +119,15 @@ const AlumniDashboard = () => {
   }
   const [pastevents, setPastEvents] = useState([]);
   useEffect(()=>{
-    fetch('/pastevent/get', {
-      method: "GET",
+    fetch('/pastevent/getSelf', {
+      method: "POST",
+      body: JSON.stringify({alumname: user.username}),
+      headers : {
+        'Content-Type': 'application/json'
+      } 
     })
     .then(res => res.json())
     .then(_pastevents => {
-      console.log(_pastevents);
       setPastEvents(_pastevents);
     })
     .catch(err => console.log(err));

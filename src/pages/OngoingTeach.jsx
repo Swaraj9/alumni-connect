@@ -40,6 +40,18 @@ const EventCard = ({ children }) => {
 
 const OngoingTeach = () => {
   const [events, setsEvents] = useState([]);
+
+  const deleteEvent = (name) => {
+    fetch('/suggestevent/delete', {
+      method: "POST",
+      body: JSON.stringify({name}),
+      headers : {
+        'Content-Type': 'application/json'
+      } 
+    })
+    .catch(err => console.log(err));
+  }
+
   useEffect(()=>{
     fetch('/event/get', {
       method: "GET",
@@ -151,6 +163,7 @@ const OngoingTeach = () => {
                 </div>
                 <div>
                 <button
+                  onClick={() => deleteEvent(sevent.name)}
                   style={{
                       minWidth: "200px",
                       border: "none",

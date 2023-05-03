@@ -24,4 +24,16 @@ pasteventRouter.get('/get', (req, res) => {
          })
 })
 
+pasteventRouter.post('/getSelf', (req, res) => {
+    const {alumname} = req.body;
+
+    PastEvent.find({alumname})
+         .then(events => {
+            res.status(201).json(events);
+         })
+         .catch(err => {
+            res.status(500).json({message:"An error occured while fetching events"})
+         })
+})
+
 module.exports = pasteventRouter;

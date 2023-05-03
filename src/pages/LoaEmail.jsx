@@ -21,6 +21,7 @@ const LetterOfAppreciation = () => {
       const response = await axios.post("/api/sendLetterOfAppreciation", {
         email,
         message,
+        subject: "Letter of Appreciation"
       });
       console.log(response.data);
     } catch (error) {

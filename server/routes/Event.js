@@ -23,4 +23,12 @@ eventRouter.get('/get', (req, res) => {
          })
 })
 
+eventRouter.post('/delete', (req, res) => {
+    const {name} = req.body;
+
+    Event.deleteOne({name})
+                .then(() => res.status(201).json({message:"Event deleted successfully"}))
+                .catch(err => res.status(500).json({message: "An Error occured during event deletion"}));
+})
+
 module.exports = eventRouter;

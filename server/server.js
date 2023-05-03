@@ -36,7 +36,7 @@ app.use('/responseevent', responseRouter);
 //Auto Email
 app.post("/api/sendLetterOfAppreciation", async (req, res) => {
     try {
-        const { email, message } = req.body;
+        const { email, message, subject } = req.body;
 
         const transporter = nodemailer.createTransport({
         service: "gmail",
@@ -49,7 +49,7 @@ app.post("/api/sendLetterOfAppreciation", async (req, res) => {
         const mailOptions = {
             from: "swaraj.dusane@somaiya.edu", // replace with your email
             to: email,
-            subject: "Letter of Appreciation",
+            subject: subject,
             text: message,
         };
 
