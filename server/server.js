@@ -42,15 +42,15 @@ app.post("/api/sendLetterOfAppreciation", async (req, res) => {
         service: "gmail",
         auth: {
             user: "swaraj.dusane@somaiya.edu", // replace with your email
-            pass: "swaraj90", // replace with your password
+            pass: "Swaraj 90", // replace with your password
         },
         });
 
         const mailOptions = {
-        from: "swaraj.dusane@somaiya.edu", // replace with your email
-        to: email,
-        subject: "Letter of Appreciation",
-        text: message,
+            from: "swaraj.dusane@somaiya.edu", // replace with your email
+            to: email,
+            subject: "Letter of Appreciation",
+            text: message,
         };
 
         await transporter.sendMail(mailOptions);
