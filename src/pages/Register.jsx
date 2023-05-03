@@ -483,7 +483,7 @@ const Register = () => {
                 >
                 Submit
             </button>
-            <button
+            {/* <button
                 style={{
                     minWidth: "200px",
                     border: "none",
@@ -496,9 +496,9 @@ const Register = () => {
                 }}
                 >
                 Reset
-            </button>
+            </button> */}
         </div>
-        <Link to="/">Login Instead</Link>
+        {/* <Link to="/">Login Instead</Link> */}
       </div>
     </div>
   );
