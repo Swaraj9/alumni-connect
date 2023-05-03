@@ -3,18 +3,20 @@ import Input from "../components/Input";
 import { AuthContext } from "../context/AuthContext";
 import somaiya from "../img/kjsieit-logo.svg"
 import AuthServices from "../services/AuthService";
+import { BsFillHouseGearFill,BsPersonWorkspace } from 'react-icons/bs';
+import { GrWorkshop } from 'react-icons/gr';
+import { VscPerson } from 'react-icons/vsc';
 
 const Card = ({ children }) => {
   return (
     <div
       style={{
-        display:"flex",
-        alignItems:"center",
-        backgroundColor: "#cccccc",
+        backgroundColor: "#EBF5EE",
         padding: "1rem",
-        borderRadius: "10px",
+        borderRadius: "1.2rem",
         marginBottom: "1.5rem",
-        paddingBottom:"2rem"
+        display:"flex",
+        alignItems:"center"
       }}
     >
       {children}
@@ -115,6 +117,37 @@ const AlumniDashboard = () => {
   }).then(res => res.json())
     .then(data => data);
   }
+  const [pastevents, setPastEvents] = useState([]);
+  useEffect(()=>{
+    fetch('/pastevent/get', {
+      method: "GET",
+    })
+    .then(res => res.json())
+    .then(_pastevents => {
+      console.log(_pastevents);
+      setPastEvents(_pastevents);
+    })
+    .catch(err => console.log(err));
+  },[])
+
+  const setIcon = (type) => {
+    if(type==="internship")
+    {
+      return <BsPersonWorkspace style={{width:100,height:100,color:"#3C4048"}} />
+    }
+    else if(type==="workshop")
+    {
+      return <BsFillHouseGearFill style={{width:100,height:100,color:"#3C4048"}} />
+    }
+    else if(type==="seminar")
+    {
+      return <GrWorkshop style={{width:100,height:100,color:"#3C4048"}} />
+    }
+    else
+    {
+      return <VscPerson style={{width:100,height:100,color:"#3C4048"}} />
+    }
+}
   return (
     <div>
       <div
@@ -344,7 +377,44 @@ const AlumniDashboard = () => {
                 >
                 Reset
             </button> */}
+          <div style={{ marginBottom: "1.5rem", fontSize:'1.8rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>
+                Participated Events
+            </div>
 
+            {pastevents  &&
+            pastevents.map( pastevent => 
+            <Card>
+              <div style={{  height:'8rem', width:'8rem', backgroundColor: 'var(--white)', borderRadius:'8rem', marginRight:'2rem',display:"flex",justifyContent:"center",alignItems:"center" }}>{setIcon(pastevent.type)}</div>
+              <div style={{ flex: 3 ,marginTop:"0.2rem", fontSize:20}}>
+              <div style={{fontWeight:500,fontSize:"1.4rem"}}>{pastevent.name}</div>
+              <div><p >About Event: {pastevent.description}</p></div>
+              <div style={{display:"flex"}}>
+                <div>{(new Date(pastevent.from)).getFullYear()+"-"+((new Date(pastevent.from)).getMonth()+1)+"-"+(new Date(pastevent.from)).getDate()}</div>
+                <div style={{marginLeft:"1rem",marginRight:"1rem"}}>to</div>
+                <div>{(new Date(pastevent.to)).getFullYear()+"-"+((new Date(pastevent.to)).getMonth()+1)+"-"+(new Date(pastevent.to)).getDate()}</div>
+                </div>
+                <div>Hosted By : {pastevent.alumname}</div>
+                <a href={pastevent.link}>Drive Link for Event Images</a>
+                
+                <div>
+                {/* <button
+                  style={{
+                      minWidth: "200px",
+                      border: "none",
+                      backgroundColor: "var(--primary)",
+                      padding: "0.5rem",
+                      color: "var(--white)",
+                      borderRadius: "5px",
+                      fontSize: "1rem",
+                      marginRight:'1rem'
+                  }}
+                  >
+                  I'm Interested
+              </button> */}
+                </div>
+              </div>
+            </Card>
+            )}
         </div>
           </div>
         </div>

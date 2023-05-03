@@ -72,7 +72,7 @@ const TeachCreate = () => {
             <div style={{ marginBottom: "1.5rem", fontSize:'2.5rem', color:'#A02929', alignSelf:'flex-start' }}>
                 <b>Teacher Dashboard</b>
             </div>
-            <div style={{ marginBottom: "1.5rem", fontSize:'1.5rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>
+            <div style={{ marginBottom: "1.5rem", fontSize:'2.0rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>
                 Proposed Event
             </div>
 
@@ -100,7 +100,7 @@ const TeachCreate = () => {
             </div> */}
 
 
-            <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"1.5rem" }}>Event Type</div>
+            <div style={{ marginBottom: "1.0rem", fontSize:'1.2rem', color:'var(--primary)', alignSelf:'flex-start', marginTop:"0.5rem" }}>Event Type</div>
             <select onChange={(e) => setType(e.target.value)} name="type" style={{
                     borderRadius:5,
                     width:"17rem",
